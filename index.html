@@ -44,6 +44,11 @@
                  text-transform: uppercase; letter-spacing: .5px; }
   .grafico.ancho { grid-column: 1 / -1; }
   .grafico canvas { max-height: 300px; }
+  #gCoaInv { height: 340px !important; max-height: 340px !important; }
+
+  .chips-graficas { background: var(--blanco); border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.08); border-top: none;
+      margin-bottom: 16px; }
 
   .seccion { background: var(--blanco); border-radius: 10px; margin-bottom: 14px;
               box-shadow: 0 1px 4px rgba(0,0,0,.08); overflow: hidden; }
@@ -112,7 +117,7 @@
 <header>
   <h1><span class="logo">avianca</span> · Bitácora AQD vs Planner Tasks</h1>
   <p>Bitácora: Occurrence type FLT · State: All Active · Year to date ·
-     COAs: AVA, GLG, TAI, LRC, AVR, TPA, TNO, GUG &nbsp;|&nbsp; Generado: 05-Jul-2026 07:22</p>
+     COAs: AVA, GLG, TAI, LRC, AVR, TPA, TNO, GUG &nbsp;|&nbsp; Generado: 05-Jul-2026 08:00</p>
 </header>
 <main>
   <div class="tarjetas">
@@ -135,7 +140,7 @@
       <canvas id="gDias"></canvas></div>
     <div class="grafico ancho"><h3>Resumen de hallazgos por categoría</h3>
       <canvas id="gBarras"></canvas></div>
-    <div class="grafico"><h3>Cobertura de eventos OPEN (con / sin Task)</h3>
+    <div class="grafico"><h3>Ocurrencias vs Tasks (todas: Open + In Progress)</h3>
       <canvas id="gCobertura"></canvas></div>
     <div class="grafico"><h3>Progreso de tareas en Planner</h3>
       <canvas id="gProgreso"></canvas></div>
@@ -859,7 +864,7 @@
 <footer>Reporte generado automáticamente · Safety / AQD Dashboard · avianca</footer>
 
 <script>
-const D = {"conteos": {"OPEN sin investigación": 129, "En Bitácora sin Task": 208, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 3, "OPEN con Task": 24}, "estados": {"OPEN": 158, "IN PROGRESS": 79}, "progreso": {"No iniciada": 28, "En curso": 1}, "por_mes": {"2026-01": 3, "2026-02": 6, "2026-03": 11, "2026-04": 15, "2026-05": 25, "2026-06": 149, "2026-07": 28}, "cobertura": {"Con Task": 24, "Sin Task": 134}, "coa": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG", "Otros"], "open": [65, 19, 20, 3, 4, 19, 17, 5, 6], "prog": [34, 11, 11, 0, 9, 7, 4, 1, 2], "con_inv": [55, 13, 13, 0, 11, 7, 6, 1, 2], "sin_inv": [44, 17, 18, 3, 2, 19, 15, 5, 6]}, "dias_prom": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG", "Otros"], "valores": [24.4, 30.7, 24.9, 7.0, 71.0, 16.5, 38.2, 26.3, 22.4]}, "riesgos": {"Intolerable": 1, "Tolerable": 59, "Acceptable": 95, "Sin riesgo asignado": 82}, "colores": {"rojo": "#D6001C", "rojo_oscuro": "#A50113", "negro": "#54565B", "azul_oscuro": "#1F4E79", "azul_claro": "#8DB4E2", "gris": "#797B80", "gris_claro": "#F4F4F4", "blanco": "#FFFFFF", "dorado": "#C8A96A"}};
+const D = {"conteos": {"OPEN sin investigación": 129, "En Bitácora sin Task": 208, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 3, "OPEN con Task": 24}, "estados": {"OPEN": 158, "IN PROGRESS": 79}, "progreso": {"No iniciada": 28, "En curso": 1}, "por_mes": {"2026-01": 3, "2026-02": 6, "2026-03": 11, "2026-04": 15, "2026-05": 25, "2026-06": 149, "2026-07": 28}, "cobertura": {"Con Task": 29, "Sin Task": 208}, "coa": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG", "Otros"], "open": [65, 19, 20, 3, 4, 19, 17, 5, 6], "prog": [34, 11, 11, 0, 9, 7, 4, 1, 2], "con_inv": [55, 13, 13, 0, 11, 7, 6, 1, 2], "sin_inv": [44, 17, 18, 3, 2, 19, 15, 5, 6]}, "dias_prom": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG", "Otros"], "valores": [24.4, 30.7, 24.9, 7.0, 71.0, 16.5, 38.2, 26.3, 22.4]}, "riesgos": {"Intolerable": 1, "Tolerable": 59, "Acceptable": 95, "Sin riesgo asignado": 82}, "por_coa": {"Todos": {"conteos": {"OPEN sin investigación": 129, "En Bitácora sin Task": 208, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 3, "OPEN con Task": 24}, "cobertura": {"Con Task": 29, "Sin Task": 208}, "progreso": {"No iniciada": 28, "En curso": 1}, "riesgos": {"Intolerable": 1, "Tolerable": 59, "Acceptable": 95, "Sin riesgo asignado": 82}, "por_mes": {"2026-01": 3, "2026-02": 6, "2026-03": 11, "2026-04": 15, "2026-05": 25, "2026-06": 149, "2026-07": 28}}, "AVA": {"conteos": {"OPEN sin investigación": 44, "En Bitácora sin Task": 74, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 2, "OPEN con Task": 21}, "cobertura": {"Con Task": 25, "Sin Task": 74}, "progreso": {"No iniciada": 24, "En curso": 1}, "riesgos": {"Tolerable": 29, "Acceptable": 27, "Sin riesgo asignado": 43}, "por_mes": {"2026-01": 2, "2026-02": 4, "2026-03": 3, "2026-04": 1, "2026-05": 8, "2026-06": 66, "2026-07": 15}}, "GLG": {"conteos": {"OPEN sin investigación": 17, "En Bitácora sin Task": 30, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 30}, "progreso": {}, "riesgos": {"Intolerable": 1, "Tolerable": 9, "Acceptable": 17, "Sin riesgo asignado": 3}, "por_mes": {"2026-02": 1, "2026-03": 3, "2026-04": 1, "2026-05": 4, "2026-06": 21}}, "TAI": {"conteos": {"OPEN sin investigación": 18, "En Bitácora sin Task": 30, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 1}, "cobertura": {"Con Task": 1, "Sin Task": 30}, "progreso": {"No iniciada": 1}, "riesgos": {"Tolerable": 10, "Acceptable": 16, "Sin riesgo asignado": 5}, "por_mes": {"2026-04": 3, "2026-05": 7, "2026-06": 16, "2026-07": 5}}, "LRC": {"conteos": {"OPEN sin investigación": 3, "En Bitácora sin Task": 3, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 3}, "progreso": {}, "riesgos": {"Acceptable": 3}, "por_mes": {"2026-06": 2, "2026-07": 1}}, "AVR": {"conteos": {"OPEN sin investigación": 2, "En Bitácora sin Task": 10, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 1, "OPEN con Task": 2}, "cobertura": {"Con Task": 3, "Sin Task": 10}, "progreso": {"No iniciada": 3}, "riesgos": {"Tolerable": 4, "Acceptable": 8, "Sin riesgo asignado": 1}, "por_mes": {"2026-01": 1, "2026-02": 1, "2026-03": 3, "2026-04": 2, "2026-05": 1, "2026-06": 5}}, "TPA": {"conteos": {"OPEN sin investigación": 19, "En Bitácora sin Task": 26, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 26}, "progreso": {}, "riesgos": {"Tolerable": 1, "Acceptable": 7, "Sin riesgo asignado": 18}, "por_mes": {"2026-04": 1, "2026-05": 4, "2026-06": 15, "2026-07": 6}}, "TNO": {"conteos": {"OPEN sin investigación": 15, "En Bitácora sin Task": 21, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 21}, "progreso": {}, "riesgos": {"Tolerable": 3, "Acceptable": 12, "Sin riesgo asignado": 6}, "por_mes": {"2026-03": 1, "2026-04": 6, "2026-05": 1, "2026-06": 13}}, "GUG": {"conteos": {"OPEN sin investigación": 5, "En Bitácora sin Task": 6, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 6}, "progreso": {}, "riesgos": {"Tolerable": 1, "Acceptable": 5}, "por_mes": {"2026-04": 1, "2026-06": 5}}, "Otros": {"conteos": {"OPEN sin investigación": 6, "En Bitácora sin Task": 8, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 8}, "progreso": {}, "riesgos": {"Tolerable": 2, "Sin riesgo asignado": 6}, "por_mes": {"2026-03": 1, "2026-06": 6, "2026-07": 1}}}, "colores": {"rojo": "#D6001C", "rojo_oscuro": "#A50113", "negro": "#54565B", "azul_oscuro": "#1F4E79", "azul_claro": "#8DB4E2", "gris": "#797B80", "gris_claro": "#F4F4F4", "blanco": "#FFFFFF", "dorado": "#C8A96A"}};
 const C = D.colores;
 const paleta = [C.rojo, C.negro, C.gris, C.azul_claro, C.rojo_oscuro, C.dorado];
 Chart.defaults.font.family = '"Segoe UI", Helvetica, Arial, sans-serif';
@@ -883,7 +888,7 @@ Chart.defaults.set("plugins.datalabels", {
 // etiquetas sobre la barra (para gráficas de barras no apiladas)
 const etiquetaArriba = { anchor: "end", align: "end", offset: -2, color: C.negro };
 
-new Chart(document.getElementById("gCoa"), {
+const chCoa = new Chart(document.getElementById("gCoa"), {
   type: "bar",
   data: { labels: D.coa.labels,
     datasets: [
@@ -895,22 +900,23 @@ new Chart(document.getElementById("gCoa"), {
                y: { stacked: true, beginAtZero: true, ticks: { precision: 0 } } } }
 });
 
-new Chart(document.getElementById("gCoaInv"), {
+const chCoaInv = new Chart(document.getElementById("gCoaInv"), {
   type: "bar",
   data: { labels: D.coa.labels,
     datasets: [
       { label: "Con investigación", data: D.coa.con_inv, backgroundColor: C.azul_claro, borderRadius: 4 },
       { label: "Sin investigación", data: D.coa.sin_inv, backgroundColor: C.rojo, borderRadius: 4 }
     ] },
-  options: { indexAxis: "y", plugins: { legend: { position: "bottom" } },
+  options: { indexAxis: "y", maintainAspectRatio: false,
+    plugins: { legend: { position: "bottom" } },
     scales: { x: { stacked: true, beginAtZero: true, ticks: { precision: 0 } },
-               y: { stacked: true } } }
+               y: { stacked: true, ticks: { autoSkip: false } } } }
 });
 
 const colorRiesgo = { "Intolerable": C.rojo_oscuro, "Unacceptable": C.rojo,
   "Tolerable": C.dorado, "Acceptable": "#5a8f5a",
   "Sin riesgo asignado": "#c9c9c9" };
-new Chart(document.getElementById("gRiesgo"), {
+const chRiesgo = new Chart(document.getElementById("gRiesgo"), {
   type: "doughnut",
   data: { labels: Object.keys(D.riesgos),
     datasets: [{ data: Object.values(D.riesgos),
@@ -919,7 +925,7 @@ new Chart(document.getElementById("gRiesgo"), {
   options: { cutout: "62%", plugins: { legend: { position: "bottom" } } }
 });
 
-new Chart(document.getElementById("gDias"), {
+const chDias = new Chart(document.getElementById("gDias"), {
   type: "bar",
   data: { labels: D.dias_prom.labels,
     datasets: [{ label: "Días promedio", data: D.dias_prom.valores,
@@ -929,7 +935,7 @@ new Chart(document.getElementById("gDias"), {
                      title: { display: true, text: "días" } } } }
 });
 
-new Chart(document.getElementById("gBarras"), {
+const chBarras = new Chart(document.getElementById("gBarras"), {
   type: "bar",
   data: { labels: Object.keys(D.conteos),
     datasets: [{ data: Object.values(D.conteos),
@@ -939,7 +945,7 @@ new Chart(document.getElementById("gBarras"), {
     scales: { y: { beginAtZero: true, grace: "10%", ticks: { precision: 0 } } } }
 });
 
-new Chart(document.getElementById("gCobertura"), {
+const chCobertura = new Chart(document.getElementById("gCobertura"), {
   type: "doughnut",
   data: { labels: Object.keys(D.cobertura),
     datasets: [{ data: Object.values(D.cobertura),
@@ -947,7 +953,7 @@ new Chart(document.getElementById("gCobertura"), {
   options: { cutout: "62%", plugins: { legend: { position: "bottom" } } }
 });
 
-new Chart(document.getElementById("gProgreso"), {
+const chProgreso = new Chart(document.getElementById("gProgreso"), {
   type: "doughnut",
   data: { labels: Object.keys(D.progreso),
     datasets: [{ data: Object.values(D.progreso),
@@ -955,7 +961,7 @@ new Chart(document.getElementById("gProgreso"), {
   options: { cutout: "62%", plugins: { legend: { position: "bottom" } } }
 });
 
-new Chart(document.getElementById("gMes"), {
+const chMes = new Chart(document.getElementById("gMes"), {
   type: "bar",
   data: { labels: Object.keys(D.por_mes),
     datasets: [{ label: "Ocurrencias", data: Object.values(D.por_mes),
@@ -963,6 +969,50 @@ new Chart(document.getElementById("gMes"), {
   options: { plugins: { legend: { display: false }, datalabels: etiquetaArriba },
     scales: { y: { beginAtZero: true, grace: "10%", ticks: { precision: 0 } } } }
 });
+
+// ---------------------------------------------------------------------------
+// Filtro por COA para las gráficas
+// ---------------------------------------------------------------------------
+function aplicarCoaGraficas(coa) {
+  const d = D.por_coa[coa];
+  chBarras.data.datasets[0].data = Object.values(d.conteos);
+  chCobertura.data.datasets[0].data = Object.values(d.cobertura);
+  chProgreso.data.labels = Object.keys(d.progreso);
+  chProgreso.data.datasets[0].data = Object.values(d.progreso);
+  chRiesgo.data.labels = Object.keys(d.riesgos);
+  chRiesgo.data.datasets[0].data = Object.values(d.riesgos);
+  chRiesgo.data.datasets[0].backgroundColor =
+      Object.keys(d.riesgos).map(k => colorRiesgo[k] || C.gris);
+  chMes.data.labels = Object.keys(d.por_mes);
+  chMes.data.datasets[0].data = Object.values(d.por_mes);
+  // en las gráficas "por COA" se resalta el COA elegido y se atenúa el resto
+  const atenuar = c => c + "38";
+  const cols = base => D.coa.labels.map(l =>
+      (coa === "Todos" || l === coa) ? base : atenuar(base));
+  chCoa.data.datasets[0].backgroundColor = cols(C.rojo);
+  chCoa.data.datasets[1].backgroundColor = cols(C.gris);
+  chCoaInv.data.datasets[0].backgroundColor = cols(C.azul_claro);
+  chCoaInv.data.datasets[1].backgroundColor = cols(C.rojo);
+  chDias.data.datasets[0].backgroundColor = cols(C.azul_claro);
+  [chBarras, chCobertura, chProgreso, chRiesgo, chMes,
+   chCoa, chCoaInv, chDias].forEach(c => c.update());
+}
+
+const barraG = document.createElement("div");
+barraG.className = "chips chips-graficas";
+barraG.innerHTML = '<span class="etiq-chips">COA en gráficas:</span>';
+Object.keys(D.por_coa).forEach(coa => {
+  const b = document.createElement("button");
+  b.textContent = coa;
+  if (coa === "Todos") b.classList.add("activo");
+  b.addEventListener("click", () => {
+    barraG.querySelectorAll("button").forEach(x => x.classList.remove("activo"));
+    b.classList.add("activo");
+    aplicarCoaGraficas(coa);
+  });
+  barraG.appendChild(b);
+});
+document.querySelector(".graficos").before(barraG);
 
 // ---------------------------------------------------------------------------
 // Tablas interactivas: orden por columna, filtro por columna y chips de COA
