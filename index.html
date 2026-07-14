@@ -128,7 +128,7 @@
 <header>
   <h1><span class="logo">avianca</span> · Bitácora AQD vs Planner Tasks</h1>
   <p>Bitácora: Occurrence type FLT · State: All Active · Year to date ·
-     COAs: AVA, GLG, TAI, LRC, AVR, TPA, TNO, GUG &nbsp;|&nbsp; Generado: 14-Jul-2026 08:13</p>
+     COAs: AVA, GLG, TAI, LRC, AVR, TPA, TNO, GUG &nbsp;|&nbsp; Generado: 14-Jul-2026 09:00</p>
 </header>
 <main>
   
@@ -138,24 +138,24 @@
   </div>
   <div id="tab-flt" class="panel-tab activo">
   <div class="tarjetas">
-      <div class="tarjeta"><div class="valor">116</div><div class="etq">Ocurrencias FLT<br>(todos los COA · YTD)</div></div>
-      <div class="tarjeta"><div class="valor">72</div><div class="etq">OPEN en Bitácora</div></div>
+      <div class="tarjeta"><div class="valor">126</div><div class="etq">Ocurrencias FLT<br>(todos los COA · YTD)</div></div>
+      <div class="tarjeta"><div class="valor">82</div><div class="etq">OPEN en Bitácora</div></div>
       <div class="tarjeta"><div class="valor">44</div><div class="etq">In Progress en Bitácora</div></div>
       <div class="tarjeta"><div class="valor">92</div><div class="etq">Tareas activas en Planner<br>(se excluyen 266 completadas)</div></div>
       <div class="tarjeta rojo"><div class="valor">65</div><div class="etq">Tasks vencidas</div></div>
-      <div class="tarjeta rojo"><div class="valor">51</div><div class="etq">OPEN sin investigación</div></div>
+      <div class="tarjeta rojo"><div class="valor">61</div><div class="etq">OPEN sin investigación</div></div>
     </div>
 
   <div class="graficos">
     <div class="grafico ancho"><h3>Ocurrencias por COA (OPEN / In Progress)</h3>
       <canvas id="gCoa"></canvas></div>
-    <div class="grafico"><h3>Investigación por COA (con / sin)</h3>
+    <div class="grafico"><h3>Tasks vs Bitácora por COA</h3>
       <canvas id="gCoaInv"></canvas></div>
     <div class="grafico"><h3>Nivel de riesgo (todas las ocurrencias)</h3>
       <canvas id="gRiesgo"></canvas></div>
     <div class="grafico ancho"><h3>Días promedio abierta por COA</h3>
       <canvas id="gDias"></canvas></div>
-    <div class="grafico ancho"><h3>Resumen de hallazgos por categoría</h3>
+    <div class="grafico ancho"><h3>Riesgo promedio por COA</h3>
       <canvas id="gBarras"></canvas></div>
     <div class="grafico"><h3>Ocurrencias vs Tasks (todas: Open + In Progress)</h3>
       <canvas id="gCobertura"></canvas></div>
@@ -171,13 +171,13 @@
         <span class="num">★</span>
         <span class="titulo-sec">Resumen por COA<small>Ocurrencias FLT activas por certificado de operación:
           estado e investigación</small></span>
-        <span class="badge badge-ok">116</span>
+        <span class="badge badge-ok">126</span>
         <span class="flecha">▾</span>
       </summary>
       <div class="tabla-wrap">
         <table>
           <thead><tr><th>COA</th><th>Total</th><th>OPEN</th><th>In Progress</th><th>Con investigación</th><th>Sin investigación</th><th>% con investigación</th></tr></thead>
-          <tbody><tr><td class=coa>AVA</td><td>41</td><td>27</td><td>14</td><td>29</td><td>12</td><td>71%</td></tr><tr><td class=coa>GLG</td><td>35</td><td>26</td><td>9</td><td>12</td><td>23</td><td>34%</td></tr><tr><td class=coa>TAI</td><td>8</td><td>5</td><td>3</td><td>3</td><td>5</td><td>38%</td></tr><tr><td class=coa>LRC</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>50%</td></tr><tr><td class=coa>AVR</td><td>3</td><td>2</td><td>1</td><td>3</td><td>0</td><td>100%</td></tr><tr><td class=coa>TPA</td><td>13</td><td>1</td><td>12</td><td>13</td><td>0</td><td>100%</td></tr><tr><td class=coa>TNO</td><td>13</td><td>9</td><td>4</td><td>4</td><td>9</td><td>31%</td></tr><tr><td class=coa>GUG</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0%</td></tr></tbody>
+          <tbody><tr><td class=coa>AVA</td><td>46</td><td>32</td><td>14</td><td>29</td><td>17</td><td>63%</td></tr><tr><td class=coa>GLG</td><td>36</td><td>27</td><td>9</td><td>12</td><td>24</td><td>33%</td></tr><tr><td class=coa>TAI</td><td>8</td><td>5</td><td>3</td><td>3</td><td>5</td><td>38%</td></tr><tr><td class=coa>LRC</td><td>2</td><td>1</td><td>1</td><td>1</td><td>1</td><td>50%</td></tr><tr><td class=coa>AVR</td><td>3</td><td>2</td><td>1</td><td>3</td><td>0</td><td>100%</td></tr><tr><td class=coa>TPA</td><td>14</td><td>2</td><td>12</td><td>13</td><td>1</td><td>93%</td></tr><tr><td class=coa>TNO</td><td>15</td><td>11</td><td>4</td><td>4</td><td>11</td><td>27%</td></tr><tr><td class=coa>GUG</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0%</td></tr><tr><td class=coa>Otros</td><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td><td>0%</td></tr></tbody>
         </table>
       </div>
     </details>
@@ -186,18 +186,27 @@
       <summary>
         <span class="num">1</span>
         <span class="titulo-sec">Eventos OPEN en Bitácora sin tipo de investigación<small>Ocurrencias abiertas cuyo campo de investigación está vacío</small></span>
-        <span class="badge badge-alerta">51</span>
+        <span class="badge badge-alerta">61</span>
         <span class="flecha">▾</span>
       </summary>
       <div class="tabla-wrap">
         <table>
           <thead><tr><th>Evento</th><th>COA</th><th>Fecha</th><th>Registrada</th><th>Días abierta</th><th>Estado</th><th>Investigación</th><th>Riesgo</th><th>Descripción</th></tr></thead>
           <tbody><tr><td>O15447-26</td><td>TNO</td><td data-orden="2026-07-08 14:25">08-Jul-2026</td><td data-orden="2026-07-13 00:00">13-Jul-2026</td><td>1</td><td>Open</td><td></td><td>Tolerable (21)</td><td>TNO- UNSTABILIZED APPROACH AT GUA [1714405]</td></tr>
+<tr><td>O15506-26</td><td>AVA</td><td data-orden="2026-07-07 09:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- WINDSHEAR ALERT OVERSHOOT ON FINAL APPROACH</td></tr>
+<tr><td>O15505-26</td><td>TPA</td><td data-orden="2026-07-07 09:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TPA- IMPROPER ROTATION TECHNIQUE DURING TAKEOFF</td></tr>
+<tr><td>O15500-26</td><td>AVA</td><td data-orden="2026-07-07 01:40">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GLIDE SLOPE ALERT DURING APPROACH</td></tr>
 <tr><td>O15415-26</td><td>GLG</td><td data-orden="2026-07-06 17:48">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GPWS GLIDE SLOPE/ GO AROUND AT EZE GLG8395 [1715740]</td></tr>
+<tr><td>O15490-26</td><td>AVA</td><td data-orden="2026-07-06 14:24">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- POSSIBLE INSUFFICIENT ENGINE WARM UP BEFORE TAKEOFF</td></tr>
+<tr><td>O15487-26</td><td>AVA</td><td data-orden="2026-07-06 13:45">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- MINIMUM FUEL DECLARATION DURING HOLDING AND ICE FORMATION ALERT</td></tr>
+<tr><td>O15484-26</td><td>TNO</td><td data-orden="2026-07-06 12:00">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TNO- POSSIBLE HIGH SPEED CROSSING AT LOW ALTITUDE DURING APPROACH</td></tr>
 <tr><td>O15390-26</td><td>TNO</td><td data-orden="2026-07-06 12:00">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- POSSIBLE EXCESSIVE APPROACH SPEED AT 1000 FEET</td></tr>
 <tr><td>O15420-26</td><td>GUG</td><td data-orden="2026-07-06 08:10">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>GUG- EGPWS GLIDESLOPE ALERT DURING ILS APPROACH</td></tr>
+<tr><td>O15478-26</td><td>Otros</td><td data-orden="2026-07-06 06:20">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>Reverser</td></tr>
+<tr><td>O15476-26</td><td>AVA</td><td data-orden="2026-07-05 19:00">05-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GO AROUND DUE TO WIND CHANGE DURING APPROACH</td></tr>
 <tr><td>O15344-26</td><td>TAI</td><td data-orden="2026-07-05 14:39">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TAI- SPEED VARIATIONS DURING MANUAL APPROACH IN TURBULENCE</td></tr>
 <tr><td>O15439-26</td><td>GLG</td><td data-orden="2026-07-05 13:52">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td>Acceptable (2)</td><td>GLG- POTENTIAL HIGH G LOAD DURING FLARE AT GYE GLG1631 [1713795]</td></tr>
+<tr><td>O15473-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TNO- THRUST LEVER MISPOSITION DURING TAXI</td></tr>
 <tr><td>O15392-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- EXCEEDING TAXI SPEED LIMIT DURING ROLLOUT ADJUSTMENT</td></tr>
 <tr><td>O15391-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- EXCEEDING TAXI SPEED LIMIT ON RAMP</td></tr>
 <tr><td>O15389-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- LATE DOOR CLOSURE AND SPOILER ARMING DURING FLIGHT</td></tr>
@@ -210,6 +219,7 @@
 <tr><td>O15194-26</td><td>TNO</td><td data-orden="2026-07-04 12:00">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>Open</td><td></td><td></td><td>TNO-TAILWIND LANDING CONDITIONS</td></tr>
 <tr><td>O15193-26</td><td>TNO</td><td data-orden="2026-07-04 12:00">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>Open</td><td></td><td></td><td>TNO-SPEED BRAKE RETRACTION EVENT</td></tr>
 <tr><td>O15465-26</td><td>AVA</td><td data-orden="2026-07-04 11:00">04-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GO AROUND DUE TO UNSTABLE APPROACH AND BRAKE FAULTS</td></tr>
+<tr><td>O15482-26</td><td>GLG</td><td data-orden="2026-07-03 22:04">03-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>GLG- UNSTABILIZED APPROACH DUE TO GROUND SPOILERS ARMED BLW 1000 FT AFE AT MIA[1713811]</td></tr>
 <tr><td>O15144-26</td><td>TAI</td><td data-orden="2026-07-03 14:44">03-Jul-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td>8</td><td>Open</td><td></td><td></td><td>TAI- IDLE THRUST SELECTION AT THE FLARE</td></tr>
 <tr><td>O15140-26</td><td>TAI</td><td data-orden="2026-07-03 14:40">03-Jul-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td>8</td><td>Open</td><td></td><td></td><td>TAI- LONG FLARE LANDING RWY27 KBOS</td></tr>
 <tr><td>O15463-26</td><td>AVA</td><td data-orden="2026-07-03 14:30">03-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- LATE SPOILER ARMING DURING ILS APPROACH</td></tr>
@@ -250,16 +260,25 @@
       <summary>
         <span class="num">2</span>
         <span class="titulo-sec">Eventos en Bitácora que no están en Tasks<small>Ocurrencias sin tarea activa de seguimiento en Planner (las completadas no cuentan)</small></span>
-        <span class="badge badge-alerta">32</span>
+        <span class="badge badge-alerta">42</span>
         <span class="flecha">▾</span>
       </summary>
       <div class="tabla-wrap">
         <table>
           <thead><tr><th>Evento</th><th>COA</th><th>Fecha</th><th>Registrada</th><th>Días abierta</th><th>Estado</th><th>Investigación</th><th>Riesgo</th><th>Descripción</th></tr></thead>
           <tbody><tr><td>O15447-26</td><td>TNO</td><td data-orden="2026-07-08 14:25">08-Jul-2026</td><td data-orden="2026-07-13 00:00">13-Jul-2026</td><td>1</td><td>Open</td><td></td><td>Tolerable (21)</td><td>TNO- UNSTABILIZED APPROACH AT GUA [1714405]</td></tr>
+<tr><td>O15506-26</td><td>AVA</td><td data-orden="2026-07-07 09:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- WINDSHEAR ALERT OVERSHOOT ON FINAL APPROACH</td></tr>
+<tr><td>O15505-26</td><td>TPA</td><td data-orden="2026-07-07 09:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TPA- IMPROPER ROTATION TECHNIQUE DURING TAKEOFF</td></tr>
+<tr><td>O15500-26</td><td>AVA</td><td data-orden="2026-07-07 01:40">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GLIDE SLOPE ALERT DURING APPROACH</td></tr>
+<tr><td>O15490-26</td><td>AVA</td><td data-orden="2026-07-06 14:24">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- POSSIBLE INSUFFICIENT ENGINE WARM UP BEFORE TAKEOFF</td></tr>
+<tr><td>O15487-26</td><td>AVA</td><td data-orden="2026-07-06 13:45">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- MINIMUM FUEL DECLARATION DURING HOLDING AND ICE FORMATION ALERT</td></tr>
+<tr><td>O15484-26</td><td>TNO</td><td data-orden="2026-07-06 12:00">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TNO- POSSIBLE HIGH SPEED CROSSING AT LOW ALTITUDE DURING APPROACH</td></tr>
 <tr><td>O15390-26</td><td>TNO</td><td data-orden="2026-07-06 12:00">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- POSSIBLE EXCESSIVE APPROACH SPEED AT 1000 FEET</td></tr>
 <tr><td>O15420-26</td><td>GUG</td><td data-orden="2026-07-06 08:10">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>GUG- EGPWS GLIDESLOPE ALERT DURING ILS APPROACH</td></tr>
+<tr><td>O15478-26</td><td>Otros</td><td data-orden="2026-07-06 06:20">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>Reverser</td></tr>
+<tr><td>O15476-26</td><td>AVA</td><td data-orden="2026-07-05 19:00">05-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GO AROUND DUE TO WIND CHANGE DURING APPROACH</td></tr>
 <tr><td>O15344-26</td><td>TAI</td><td data-orden="2026-07-05 14:39">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TAI- SPEED VARIATIONS DURING MANUAL APPROACH IN TURBULENCE</td></tr>
+<tr><td>O15473-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TNO- THRUST LEVER MISPOSITION DURING TAXI</td></tr>
 <tr><td>O15392-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- EXCEEDING TAXI SPEED LIMIT DURING ROLLOUT ADJUSTMENT</td></tr>
 <tr><td>O15391-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- EXCEEDING TAXI SPEED LIMIT ON RAMP</td></tr>
 <tr><td>O15389-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- LATE DOOR CLOSURE AND SPOILER ARMING DURING FLIGHT</td></tr>
@@ -270,6 +289,7 @@
 <tr><td>O15194-26</td><td>TNO</td><td data-orden="2026-07-04 12:00">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>Open</td><td></td><td></td><td>TNO-TAILWIND LANDING CONDITIONS</td></tr>
 <tr><td>O15193-26</td><td>TNO</td><td data-orden="2026-07-04 12:00">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>Open</td><td></td><td></td><td>TNO-SPEED BRAKE RETRACTION EVENT</td></tr>
 <tr><td>O15465-26</td><td>AVA</td><td data-orden="2026-07-04 11:00">04-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GO AROUND DUE TO UNSTABLE APPROACH AND BRAKE FAULTS</td></tr>
+<tr><td>O15482-26</td><td>GLG</td><td data-orden="2026-07-03 22:04">03-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>GLG- UNSTABILIZED APPROACH DUE TO GROUND SPOILERS ARMED BLW 1000 FT AFE AT MIA[1713811]</td></tr>
 <tr><td>O15144-26</td><td>TAI</td><td data-orden="2026-07-03 14:44">03-Jul-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td>8</td><td>Open</td><td></td><td></td><td>TAI- IDLE THRUST SELECTION AT THE FLARE</td></tr>
 <tr><td>O15140-26</td><td>TAI</td><td data-orden="2026-07-03 14:40">03-Jul-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td>8</td><td>Open</td><td></td><td></td><td>TAI- LONG FLARE LANDING RWY27 KBOS</td></tr>
 <tr><td>O15463-26</td><td>AVA</td><td data-orden="2026-07-03 14:30">03-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- LATE SPOILER ARMING DURING ILS APPROACH</td></tr>
@@ -330,7 +350,7 @@
     <details class="seccion" >
       <summary>
         <span class="num">4</span>
-        <span class="titulo-sec">Tasks completadas con evento aún OPEN en Bitácora<small>La tarea se cerró en Planner pero la ocurrencia sigue abierta</small></span>
+        <span class="titulo-sec">Tasks completadas sin cerrar en Bitácora<small>La tarea se completó en Planner pero la ocurrencia sigue activa (Open o In Progress) en Bitácora</small></span>
         <span class="badge badge-ok">0</span>
         <span class="flecha">▾</span>
       </summary>
@@ -419,69 +439,12 @@
         </table>
       </div>
     </details>
-    <details class="seccion" >
-      <summary>
-        <span class="num">6</span>
-        <span class="titulo-sec">Eventos OPEN en Bitácora que sí tienen Task<small>Ocurrencias abiertas con tarea activa (no completada) en Planner</small></span>
-        <span class="badge badge-alerta">44</span>
-        <span class="flecha">▾</span>
-      </summary>
-      <div class="tabla-wrap">
-        <table>
-          <thead><tr><th>Evento</th><th>COA</th><th>Fecha</th><th>Registrada</th><th>Días abierta</th><th>Estado</th><th>Investigación</th><th>Riesgo</th><th>Descripción</th></tr></thead>
-          <tbody><tr><td>O15427-26</td><td>AVA</td><td data-orden="2026-07-07 13:18">07-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- SPEED INCREASE DURING TURBULENCE [PENDING DATA]</td></tr>
-<tr><td>O15417-26</td><td>AVR</td><td data-orden="2026-07-07 10:05">07-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVR- BOUNCE LANDING AND GO AROUND AT CUC [PENDING DATA]</td></tr>
-<tr><td>O15421-26</td><td>AVA</td><td data-orden="2026-07-06 22:47">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- FLAP OVERSPEED DURING ILS APPROACH WITH AUTOTHROTTLE OFF [PENDING DATA]</td></tr>
-<tr><td>O15415-26</td><td>GLG</td><td data-orden="2026-07-06 17:48">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GPWS GLIDE SLOPE/ GO AROUND AT EZE GLG8395 [1715740]</td></tr>
-<tr><td>O15371-26</td><td>TPA</td><td data-orden="2026-07-05 16:16">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>TPA- RUNWAY ASPHALT DEBRIS AND THRESHOLD DISPLACEMENT DURING APPROACH [PENDING DATA]</td></tr>
-<tr><td>O15430-26</td><td>AVA</td><td data-orden="2026-07-05 15:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- MOMENTARY OVERSPEED AND MODERATE TURBULENCE DURING CRUISE [1712709]</td></tr>
-<tr><td>O15347-26</td><td>AVA</td><td data-orden="2026-07-05 14:30">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (2)</td><td>AVA- FLAPS MISCONFIGURATION DURING ILS APPROACH [PENDING DATA]</td></tr>
-<tr><td>O15439-26</td><td>GLG</td><td data-orden="2026-07-05 13:52">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td>Acceptable (2)</td><td>GLG- POTENTIAL HIGH G LOAD DURING FLARE AT GYE GLG1631 [1713795]</td></tr>
-<tr><td>O15254-26</td><td>GLG</td><td data-orden="2026-07-05 11:25">05-Jul-2026</td><td data-orden="2026-07-08 00:00">08-Jul-2026</td><td class="dias-alto">6</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (1)</td><td>GLG- EARLY AUTOBRAKE DISCONNECTION AFTER TOUCHDOWN AT SCY GLG1630 [1713817]</td></tr>
-<tr><td>O15294-26</td><td>GLG</td><td data-orden="2026-07-04 23:08">04-Jul-2026</td><td data-orden="2026-07-08 00:00">08-Jul-2026</td><td>6</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- DIVERSION TO ALTERNATE AIRPORT DUE TO WEATHER AT JFK GLG7392 [PENDIENTE SARA]</td></tr>
-<tr><td>O15287-26</td><td>AVA</td><td data-orden="2026-07-04 20:20">04-Jul-2026</td><td data-orden="2026-07-08 00:00">08-Jul-2026</td><td class="dias-alto">6</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- MISSELECTED FLAPS DURING GO AROUND [PENDING DATA]</td></tr>
-<tr><td>O15206-26</td><td>AVA</td><td data-orden="2026-07-04 14:52">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td class="dias-alto">7</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- BOUNCED AND SUSPECTED LONG LANDING AT BGA [PENDING DATA]</td></tr>
-<tr><td>O15200-26</td><td>AVA</td><td data-orden="2026-07-04 13:00">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td class="dias-alto">7</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- FLAPS 2 OVERSPEED [PENDING DATA]</td></tr>
-<tr><td>O15198-26</td><td>GLG</td><td data-orden="2026-07-04 12:30">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT GPS GLG1638 [1713853]</td></tr>
-<tr><td>O15037-26</td><td>AVA</td><td data-orden="2026-07-03 11:00">03-Jul-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td class="dias-alto">11</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- SUSPECTED LOW PATH DURING APPROACH [PENDING DATA]</td></tr>
-<tr><td>O15099-26</td><td>GLG</td><td data-orden="2026-07-02 05:30">02-Jul-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td>8</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- LONG FLARE CONTROL INTERVENTION AT BOG GLG8380 [PENDIENTE SARA]</td></tr>
-<tr><td>O14983-26</td><td>AVA</td><td data-orden="2026-07-02 05:14">02-Jul-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td class="dias-alto">11</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- ILS APPROACH COURSE DEVIATION [PENDING DATA]</td></tr>
-<tr><td>O15095-26</td><td>AVA</td><td data-orden="2026-07-01 18:30">01-Jul-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td class="dias-alto">8</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (10)</td><td>AVA- GO AROUND DUE TO NO FLARE AT BOG [1708938]</td></tr>
-<tr><td>O14960-26</td><td>AVA</td><td data-orden="2026-07-01 16:25">01-Jul-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td class="dias-alto">11</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- RUNWAY SURFACE DAMAGE AT PEI</td></tr>
-<tr><td>O14887-26</td><td>GLG</td><td data-orden="2026-06-30 14:20">30-Jun-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GPWS SINK RATE DURING APP AT UIO GLG1689 [1711514]</td></tr>
-<tr><td>O14873-26</td><td>GLG</td><td data-orden="2026-06-29 20:55">29-Jun-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT CUE GLG1606 [1709464]</td></tr>
-<tr><td>O15210-26</td><td>GLG</td><td data-orden="2026-06-29 17:05">29-Jun-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- REJECTED TAKEOFF AT GYE GLG1683 [1709457]</td></tr>
-<tr><td>O14840-26</td><td>GLG</td><td data-orden="2026-06-29 16:00">29-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td></td><td>Acceptable (2)</td><td>GLG- POSSIBLE SPEED EXCEEDANCE AT UIO GLG1633 [1707936]</td></tr>
-<tr><td>O14871-26</td><td>GLG</td><td data-orden="2026-06-29 13:10">29-Jun-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT UIO/ DEVERTION TO GYE GLG1621 [1711427]</td></tr>
-<tr><td>O14844-26</td><td>GLG</td><td data-orden="2026-06-29 09:00">29-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- CROSSWIND DURING APP AT UIO GLG1623 [1709476]</td></tr>
-<tr><td>O14847-26</td><td>GLG</td><td data-orden="2026-06-28 21:20">28-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- DEVIATION PAPI PROFILE IN APP AT MEC GLG1696 [1711493]</td></tr>
-<tr><td>O14753-26</td><td>GLG</td><td data-orden="2026-06-28 17:30">28-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT UIO/ DEVERTION TO MEC GLG8373 [1707009]</td></tr>
-<tr><td>O14843-26</td><td>GLG</td><td data-orden="2026-06-28 16:20">28-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- CROSSWIND DURING APP AT UIO GLG1633 [1711425]</td></tr>
-<tr><td>O14867-26</td><td>GLG</td><td data-orden="2026-06-28 15:55">28-Jun-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td></td><td>Acceptable (2)</td><td>GLG- FLIGHT DEPARTURE DELAY AT UIO GLG1610 [1711472]</td></tr>
-<tr><td>O14677-26</td><td>AVA</td><td data-orden="2026-06-28 12:22">28-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td class="dias-alto">12</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (2)</td><td>AVA - GO AROUND DUE TO UNSTABLE APPROACH [1710075]</td></tr>
-<tr><td>O14618-26</td><td>GLG</td><td data-orden="2026-06-27 17:22">27-Jun-2026</td><td data-orden="2026-07-01 00:00">01-Jul-2026</td><td>13</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND DUE POSSIBLE V/S EXCEDANCE DURING APP AT UIO GLG1631 [1708559]</td></tr>
-<tr><td>O14603-26</td><td>GLG</td><td data-orden="2026-06-27 16:25">27-Jun-2026</td><td data-orden="2026-07-01 00:00">01-Jul-2026</td><td class="dias-alto">13</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (1)</td><td>GLG- GO AROUND AT UIO GLG1683 [1706294]</td></tr>
-<tr><td>O14771-26</td><td>GLG</td><td data-orden="2026-06-27 16:15">27-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT UIO GLG1633 [1707984]</td></tr>
-<tr><td>O14610-26</td><td>GLG</td><td data-orden="2026-06-27 06:55">27-Jun-2026</td><td data-orden="2026-07-01 00:00">01-Jul-2026</td><td>13</td><td>Open</td><td></td><td>Acceptable (10)</td><td>GLG- CACELLED TAKEOFF AT BOG GLG8385 [1707929]</td></tr>
-<tr><td>O14614-26</td><td>GLG</td><td data-orden="2026-06-26 18:45">26-Jun-2026</td><td data-orden="2026-07-01 00:00">01-Jul-2026</td><td>13</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT GYE GLG8399 [1708691]</td></tr>
-<tr><td>O14635-26</td><td>GLG</td><td data-orden="2026-06-26 17:50">26-Jun-2026</td><td data-orden="2026-07-01 00:00">01-Jul-2026</td><td>13</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- VERTICAL SPEED EXCEEDANCE DURING APPROACH AT UIO GLG1681 [1707016]</td></tr>
-<tr><td>O15224-26</td><td>GLG</td><td data-orden="2026-06-26 12:49">26-Jun-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT UIO GLG1695 [1708549]</td></tr>
-<tr><td>O14539-26</td><td>AVA</td><td data-orden="2026-06-23 22:55">23-Jun-2026</td><td data-orden="2026-06-30 00:00">30-Jun-2026</td><td class="dias-alto">14</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- DUAL INPUT DURING FINAL APP AT BOG [1706098]</td></tr>
-<tr><td>O14112-26</td><td>LRC</td><td data-orden="2026-06-21 16:41">21-Jun-2026</td><td data-orden="2026-06-23 00:00">23-Jun-2026</td><td>21</td><td>Open</td><td></td><td>Acceptable (4)</td><td>LRC- SUSPECTED LIGTHTNING STRIKE DURNG ASCENT AT SJO</td></tr>
-<tr><td>O14152-26</td><td>TAI</td><td data-orden="2026-06-21 13:30">21-Jun-2026</td><td data-orden="2026-06-23 00:00">23-Jun-2026</td><td>21</td><td>Open</td><td></td><td>Acceptable (4)</td><td>TAI- FLAPS CONFIGURATION DURING APP AT MIA TAI396 [PENDIENTE SARA]</td></tr>
-<tr><td>O15089-26</td><td>AVA</td><td data-orden="2026-06-17 11:36">17-Jun-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td class="dias-alto">8</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- PILOT DEVIATION AT JFK [1699927]</td></tr>
-<tr><td>O13715-26</td><td>AVR</td><td data-orden="2026-06-13 09:16">13-Jun-2026</td><td data-orden="2026-06-18 00:00">18-Jun-2026</td><td class="dias-alto">26</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVR - LOW SPEED FLIGHT DURING CLB AT BOG [1699210]</td></tr>
-<tr><td>O13413-26</td><td>GLG</td><td data-orden="2026-06-11 15:10">11-Jun-2026</td><td data-orden="2026-06-16 00:00">16-Jun-2026</td><td class="dias-alto">28</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>GLG- TURBULENCE DURING CLIMB AT EZE GLG8396 [PENDIENTE SARA]</td></tr>
-<tr><td>O15441-26</td><td>AVA</td><td data-orden="2026-06-05 14:00">05-Jun-2026</td><td data-orden="2026-07-10 00:00">10-Jul-2026</td><td class="dias-alto">4</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- NO ATC INSTRUCTION OMISSION DURING APPROACH</td></tr></tbody>
-        </table>
-      </div>
-    </details>
   
     <details class="seccion" >
       <summary>
         <span class="num">≡</span>
         <span class="titulo-sec">Listado completo de ocurrencias FLT con nivel de riesgo<small>Todas las ocurrencias activas (Open + In Progress) de todos los COA</small></span>
-        <span class="badge badge-alerta">116</span>
+        <span class="badge badge-alerta">126</span>
         <span class="flecha">▾</span>
       </summary>
       <div class="tabla-wrap">
@@ -489,8 +452,13 @@
           <thead><tr><th>Evento</th><th>COA</th><th>Fecha</th><th>Registrada</th><th>Días abierta</th><th>Estado</th><th>Investigación</th><th>Riesgo</th><th>Descripción</th></tr></thead>
           <tbody><tr><td>O15440-26</td><td>AVA</td><td data-orden="2026-07-09 12:35">09-Jul-2026</td><td data-orden="2026-07-10 00:00">10-Jul-2026</td><td>4</td><td>In Progress</td><td>Full Investigation</td><td>Tolerable (50)</td><td>AVA- HIGH SPEED REJECTED TAKEOFF AT BOG [1714664]</td></tr>
 <tr><td>O15427-26</td><td>AVA</td><td data-orden="2026-07-07 13:18">07-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- SPEED INCREASE DURING TURBULENCE [PENDING DATA]</td></tr>
+<tr><td>O15506-26</td><td>AVA</td><td data-orden="2026-07-07 09:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- WINDSHEAR ALERT OVERSHOOT ON FINAL APPROACH</td></tr>
+<tr><td>O15500-26</td><td>AVA</td><td data-orden="2026-07-07 01:40">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GLIDE SLOPE ALERT DURING APPROACH</td></tr>
 <tr><td>O15421-26</td><td>AVA</td><td data-orden="2026-07-06 22:47">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- FLAP OVERSPEED DURING ILS APPROACH WITH AUTOTHROTTLE OFF [PENDING DATA]</td></tr>
+<tr><td>O15490-26</td><td>AVA</td><td data-orden="2026-07-06 14:24">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- POSSIBLE INSUFFICIENT ENGINE WARM UP BEFORE TAKEOFF</td></tr>
+<tr><td>O15487-26</td><td>AVA</td><td data-orden="2026-07-06 13:45">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- MINIMUM FUEL DECLARATION DURING HOLDING AND ICE FORMATION ALERT</td></tr>
 <tr><td>O15323-26</td><td>AVA</td><td data-orden="2026-07-06 11:45">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>In Progress</td><td>Assessment Only</td><td>Tolerable (21)</td><td>AVA- MINIMUM FUEL AT JFK [1713257]</td></tr>
+<tr><td>O15476-26</td><td>AVA</td><td data-orden="2026-07-05 19:00">05-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GO AROUND DUE TO WIND CHANGE DURING APPROACH</td></tr>
 <tr><td>O15430-26</td><td>AVA</td><td data-orden="2026-07-05 15:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- MOMENTARY OVERSPEED AND MODERATE TURBULENCE DURING CRUISE [1712709]</td></tr>
 <tr><td>O15347-26</td><td>AVA</td><td data-orden="2026-07-05 14:30">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (2)</td><td>AVA- FLAPS MISCONFIGURATION DURING ILS APPROACH [PENDING DATA]</td></tr>
 <tr><td>O15470-26</td><td>AVA</td><td data-orden="2026-07-05 06:30">05-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GO AROUND DUE TO LOW VISIBILITY APPROACH</td></tr>
@@ -498,7 +466,7 @@
 <tr><td>O15287-26</td><td>AVA</td><td data-orden="2026-07-04 20:20">04-Jul-2026</td><td data-orden="2026-07-08 00:00">08-Jul-2026</td><td class="dias-alto">6</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- MISSELECTED FLAPS DURING GO AROUND [PENDING DATA]</td></tr>
 <tr><td>O15466-26</td><td>AVA</td><td data-orden="2026-07-04 19:40">04-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GO AROUND DUE TO RUNWAY EXIT REQUEST</td></tr>
 <tr><td>O15281-26</td><td>AVA</td><td data-orden="2026-07-04 17:00">04-Jul-2026</td><td data-orden="2026-07-08 00:00">08-Jul-2026</td><td>6</td><td>In Progress</td><td>Assessment Only</td><td>Tolerable (50)</td><td>AVA- TCAS RA DESCENT FL240 [1713743]</td></tr>
-<tr><td>O15206-26</td><td>AVA</td><td data-orden="2026-07-04 14:52">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td class="dias-alto">7</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- BOUNCED AND SUSPECTED LONG LANDING AT BGA [PENDING DATA]</td></tr>
+<tr><td>O15206-26</td><td>AVA</td><td data-orden="2026-07-04 14:52">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td class="dias-alto">7</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- BOUNCED AND SUSPECTED LONG LANDING AT BGA [NO DATA]</td></tr>
 <tr><td>O15200-26</td><td>AVA</td><td data-orden="2026-07-04 13:00">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td class="dias-alto">7</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>AVA- FLAPS 2 OVERSPEED [PENDING DATA]</td></tr>
 <tr><td>O15465-26</td><td>AVA</td><td data-orden="2026-07-04 11:00">04-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- GO AROUND DUE TO UNSTABLE APPROACH AND BRAKE FAULTS</td></tr>
 <tr><td>O15463-26</td><td>AVA</td><td data-orden="2026-07-03 14:30">03-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- LATE SPOILER ARMING DURING ILS APPROACH</td></tr>
@@ -536,6 +504,7 @@
 <tr><td>O15254-26</td><td>GLG</td><td data-orden="2026-07-05 11:25">05-Jul-2026</td><td data-orden="2026-07-08 00:00">08-Jul-2026</td><td class="dias-alto">6</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (1)</td><td>GLG- EARLY AUTOBRAKE DISCONNECTION AFTER TOUCHDOWN AT SCY GLG1630 [1713817]</td></tr>
 <tr><td>O15294-26</td><td>GLG</td><td data-orden="2026-07-04 23:08">04-Jul-2026</td><td data-orden="2026-07-08 00:00">08-Jul-2026</td><td>6</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- DIVERSION TO ALTERNATE AIRPORT DUE TO WEATHER AT JFK GLG7392 [PENDIENTE SARA]</td></tr>
 <tr><td>O15198-26</td><td>GLG</td><td data-orden="2026-07-04 12:30">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT GPS GLG1638 [1713853]</td></tr>
+<tr><td>O15482-26</td><td>GLG</td><td data-orden="2026-07-03 22:04">03-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>GLG- UNSTABILIZED APPROACH DUE TO GROUND SPOILERS ARMED BLW 1000 FT AFE AT MIA[1713811]</td></tr>
 <tr><td>O15099-26</td><td>GLG</td><td data-orden="2026-07-02 05:30">02-Jul-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td>8</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- LONG FLARE CONTROL INTERVENTION AT BOG GLG8380 [PENDIENTE SARA]</td></tr>
 <tr><td>O14887-26</td><td>GLG</td><td data-orden="2026-06-30 14:20">30-Jun-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GPWS SINK RATE DURING APP AT UIO GLG1689 [1711514]</td></tr>
 <tr><td>O14873-26</td><td>GLG</td><td data-orden="2026-06-29 20:55">29-Jun-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG- GO AROUND AT CUE GLG1606 [1709464]</td></tr>
@@ -569,6 +538,7 @@
 <tr><td>O15420-26</td><td>GUG</td><td data-orden="2026-07-06 08:10">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>GUG- EGPWS GLIDESLOPE ALERT DURING ILS APPROACH</td></tr>
 <tr><td>O15180-26</td><td>LRC</td><td data-orden="2026-07-04 07:25">04-Jul-2026</td><td data-orden="2026-07-07 00:00">07-Jul-2026</td><td>7</td><td>In Progress</td><td>Assessment Only</td><td>Tolerable (21)</td><td>LRC- UNSTABILIZED APP & LANDING GEAR CONTROL UNITS FAULT AT GUA [1711824]</td></tr>
 <tr><td>O14112-26</td><td>LRC</td><td data-orden="2026-06-21 16:41">21-Jun-2026</td><td data-orden="2026-06-23 00:00">23-Jun-2026</td><td>21</td><td>Open</td><td></td><td>Acceptable (4)</td><td>LRC- SUSPECTED LIGTHTNING STRIKE DURNG ASCENT AT SJO</td></tr>
+<tr><td>O15478-26</td><td>Otros</td><td data-orden="2026-07-06 06:20">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>Reverser</td></tr>
 <tr><td>O15344-26</td><td>TAI</td><td data-orden="2026-07-05 14:39">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TAI- SPEED VARIATIONS DURING MANUAL APPROACH IN TURBULENCE</td></tr>
 <tr><td>O15468-26</td><td>TAI</td><td data-orden="2026-07-05 05:00">05-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TAI- DELAYED THRUST LEVER IDLE AND LONG FLARE DURING LANDING</td></tr>
 <tr><td>O15144-26</td><td>TAI</td><td data-orden="2026-07-03 14:44">03-Jul-2026</td><td data-orden="2026-07-06 00:00">06-Jul-2026</td><td>8</td><td>Open</td><td></td><td></td><td>TAI- IDLE THRUST SELECTION AT THE FLARE</td></tr>
@@ -578,7 +548,9 @@
 <tr><td>O13719-26</td><td>TAI</td><td data-orden="2026-06-17 04:45">17-Jun-2026</td><td data-orden="2026-06-19 00:00">19-Jun-2026</td><td class="dias-alto">25</td><td>In Progress</td><td>Assessment Only</td><td>Acceptable (4)</td><td>TAI- BANKING EXCEDENCE AT JFK TAI568 [1700106]</td></tr>
 <tr><td>O13666-26</td><td>TAI</td><td data-orden="2026-06-14 02:30">14-Jun-2026</td><td data-orden="2026-06-18 00:00">18-Jun-2026</td><td class="dias-alto">26</td><td>In Progress</td><td>Assessment Only</td><td>Tolerable (21)</td><td>TAI- UNSTABILIZED APPROACH DUE TO LATE GROUND SPOILER ARM. 978ft AFE [1697647]</td></tr>
 <tr><td>O15447-26</td><td>TNO</td><td data-orden="2026-07-08 14:25">08-Jul-2026</td><td data-orden="2026-07-13 00:00">13-Jul-2026</td><td>1</td><td>Open</td><td></td><td>Tolerable (21)</td><td>TNO- UNSTABILIZED APPROACH AT GUA [1714405]</td></tr>
+<tr><td>O15484-26</td><td>TNO</td><td data-orden="2026-07-06 12:00">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TNO- POSSIBLE HIGH SPEED CROSSING AT LOW ALTITUDE DURING APPROACH</td></tr>
 <tr><td>O15390-26</td><td>TNO</td><td data-orden="2026-07-06 12:00">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- POSSIBLE EXCESSIVE APPROACH SPEED AT 1000 FEET</td></tr>
+<tr><td>O15473-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TNO- THRUST LEVER MISPOSITION DURING TAXI</td></tr>
 <tr><td>O15392-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- EXCEEDING TAXI SPEED LIMIT DURING ROLLOUT ADJUSTMENT</td></tr>
 <tr><td>O15391-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- EXCEEDING TAXI SPEED LIMIT ON RAMP</td></tr>
 <tr><td>O15389-26</td><td>TNO</td><td data-orden="2026-07-05 12:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>TNO- LATE DOOR CLOSURE AND SPOILER ARMING DURING FLIGHT</td></tr>
@@ -590,6 +562,7 @@
 <tr><td>O10854-26</td><td>TNO</td><td data-orden="2026-04-21 12:00">21-Apr-2026</td><td data-orden="2026-05-11 00:00">11-May-2026</td><td class="dias-alto">64</td><td>In Progress</td><td>Assessment Only</td><td>Acceptable (10)</td><td>TNO- TCAS TA DURING APPROACH AT LAX [NO DATA]</td></tr>
 <tr><td>O8934-26</td><td>TNO</td><td data-orden="2026-04-14 12:00">14-Apr-2026</td><td data-orden="2026-04-16 00:00">16-Apr-2026</td><td class="dias-alto">89</td><td>In Progress</td><td>Assessment Only</td><td>Tolerable (50)</td><td>TNO- TAWS CAUTION TERRAIN AHEAD ALARM AT SAP</td></tr>
 <tr><td>O5830-26</td><td>TNO</td><td data-orden="2026-03-08 12:00">08-Mar-2026</td><td data-orden="2026-03-10 00:00">10-Mar-2026</td><td class="dias-alto">126</td><td>In Progress</td><td>Full Investigation</td><td>Tolerable (50)</td><td>TNO- GO AROUND DUE TO GPWS TERRAIN AT SAP [1632787]</td></tr>
+<tr><td>O15505-26</td><td>TPA</td><td data-orden="2026-07-07 09:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>TPA- IMPROPER ROTATION TECHNIQUE DURING TAKEOFF</td></tr>
 <tr><td>O15358-26</td><td>TPA</td><td data-orden="2026-07-05 23:30">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>In Progress</td><td>Assessment Only</td><td>Acceptable (4)</td><td>TPA- DELAYED REVERSER RETRACTION DURING CAT II APPROACH ROLLOUT [1714178]</td></tr>
 <tr><td>O15371-26</td><td>TPA</td><td data-orden="2026-07-05 16:16">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td class="dias-alto">5</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>TPA- RUNWAY ASPHALT DEBRIS AND THRESHOLD DISPLACEMENT DURING APPROACH [PENDING DATA]</td></tr>
 <tr><td>O14980-26</td><td>TPA</td><td data-orden="2026-07-02 00:20">02-Jul-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>In Progress</td><td>Assessment Only</td><td>Acceptable (4)</td><td>TPA- BRAKE OVERHEAT WARNING [PENDING DATA]</td></tr>
@@ -610,11 +583,11 @@
 
   <div id="tab-cbn" class="panel-tab">
           <div class="tarjetas">
-          <div class="tarjeta"><div class="valor">28</div><div class="etq">Ocurrencias CBN activas<br>(Year to Date)</div></div>
-          <div class="tarjeta"><div class="valor">22</div><div class="etq">OPEN</div></div>
-          <div class="tarjeta"><div class="valor">6</div><div class="etq">In Progress</div></div>
-          <div class="tarjeta"><div class="valor">27</div><div class="etq">Con riesgo asignado</div></div>
-          <div class="tarjeta rojo"><div class="valor">1</div><div class="etq">Sin riesgo asignado</div></div></div>
+          <div class="tarjeta"><div class="valor">32</div><div class="etq">Ocurrencias CBN activas<br>(Year to Date)</div></div>
+          <div class="tarjeta"><div class="valor">27</div><div class="etq">OPEN</div></div>
+          <div class="tarjeta"><div class="valor">5</div><div class="etq">In Progress</div></div>
+          <div class="tarjeta"><div class="valor">26</div><div class="etq">Con riesgo asignado</div></div>
+          <div class="tarjeta rojo"><div class="valor">6</div><div class="etq">Sin riesgo asignado</div></div></div>
           <div class="graficos">
             <div class="grafico"><h3>Ocurrencias con riesgo vs sin riesgo</h3>
               <canvas id="gRiesgoCBN"></canvas></div>
@@ -626,13 +599,18 @@
       <summary>
         <span class="num">≡</span>
         <span class="titulo-sec">Listado completo de ocurrencias CBN con nivel de riesgo<small>Todas las ocurrencias CBN activas (Open + In Progress), Year to Date</small></span>
-        <span class="badge badge-alerta">28</span>
+        <span class="badge badge-alerta">32</span>
         <span class="flecha">▾</span>
       </summary>
       <div class="tabla-wrap">
         <table>
           <thead><tr><th>Evento</th><th>COA</th><th>Fecha</th><th>Registrada</th><th>Días abierta</th><th>Estado</th><th>Investigación</th><th>Riesgo</th><th>Descripción</th></tr></thead>
-          <tbody><tr><td>O14879-26</td><td>AVA</td><td data-orden="2026-06-30 06:40">30-Jun-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td>Assessment Only</td><td>Acceptable (4)</td><td>AVA- PAX ILLNESS MEDICAL KIT USED</td></tr>
+          <tbody><tr><td>O15510-26</td><td>AVA</td><td data-orden="2026-07-07 10:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- MEDICAL EVENT ONBOARD AIRCRAFT</td></tr>
+<tr><td>O15509-26</td><td>AVA</td><td data-orden="2026-07-07 10:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- PASSENGER MEDICAL EVENT DURING CRUISE</td></tr>
+<tr><td>O15501-26</td><td>AVA</td><td data-orden="2026-07-07 02:00">07-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- PASSENGER MEDICAL EVENT WITH MEDICAL KIT USE</td></tr>
+<tr><td>O15483-26</td><td>AVA</td><td data-orden="2026-07-06 09:30">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- PASSENGER MEDICAL EVENT DURING CRUISE</td></tr>
+<tr><td>O15481-26</td><td>AVA</td><td data-orden="2026-07-06 09:00">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>AVA- PASSENGER MEDICAL EVENT IN FLIGHT</td></tr>
+<tr><td>O14879-26</td><td>AVA</td><td data-orden="2026-06-30 06:40">30-Jun-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td>Assessment Only</td><td>Acceptable (4)</td><td>AVA- PAX ILLNESS MEDICAL KIT USED</td></tr>
 <tr><td>O14723-26</td><td>AVA</td><td data-orden="2026-06-28 18:30">28-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td>Assessment Only</td><td>Tolerable (20)</td><td>AVA- DIVERTED FLIGHT PAX ILLNESS</td></tr>
 <tr><td>O14738-26</td><td>AVA</td><td data-orden="2026-06-28 12:00">28-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td></td><td>Acceptable (1)</td><td>AVA - MISSING CABIN CREW REST CURTAIN</td></tr>
 <tr><td>O14737-26</td><td>AVA</td><td data-orden="2026-06-28 12:00">28-Jun-2026</td><td data-orden="2026-07-02 00:00">02-Jul-2026</td><td>12</td><td>Open</td><td></td><td>Acceptable (1)</td><td>AVA - MISSING CABIN CREW REST CURTAIN</td></tr>
@@ -655,8 +633,7 @@
 <tr><td>O14474-26</td><td>AVA</td><td data-orden="2026-04-14 13:00">14-Apr-2026</td><td data-orden="2026-06-30 00:00">30-Jun-2026</td><td>14</td><td>Open</td><td></td><td>Tolerable (20)</td><td>AVA- DISEMBARKING PROCEDURE</td></tr>
 <tr><td>O1407-26</td><td>AVA</td><td data-orden="2026-01-17 11:00">17-Jan-2026</td><td data-orden="2026-01-20 00:00">20-Jan-2026</td><td class="dias-alto">175</td><td>In Progress</td><td>Assessment Only</td><td>Acceptable (2)</td><td>AVA- [DG] PAX ILLNEES AND POC USED IN FLIGHT AT BOG</td></tr>
 <tr><td>O14162-26</td><td>GLG</td><td data-orden="2026-06-21 19:15">21-Jun-2026</td><td data-orden="2026-06-23 00:00">23-Jun-2026</td><td class="dias-alto">21</td><td>Open</td><td>Logged for Statistics</td><td>Acceptable (4)</td><td>GLG- PASSENGER SMOKING ON BOARD DURING CRUISE GLG 8396</td></tr>
-<tr><td>O6240-26</td><td>GLG</td><td data-orden="2026-03-13 04:30">13-Mar-2026</td><td data-orden="2026-03-16 00:00">16-Mar-2026</td><td class="dias-alto">120</td><td>In Progress</td><td>Full Investigation</td><td>Tolerable (21)</td><td>GLG- SMOKE IN CABIN (PED) AT BOG GLG8395</td></tr>
-<tr><td>O15464-26</td><td>LRC</td><td data-orden="2026-07-03 16:00">03-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>LRC- EXCESSIVE TARMAC DELAY DUE TO DOOR OPENING COORDINATION</td></tr>
+<tr><td>O15479-26</td><td>Otros</td><td data-orden="2026-07-06 07:15">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>Medlink Ifm 02176</td></tr>
 <tr><td>O14480-26</td><td>TAI</td><td data-orden="2026-06-26 06:20">26-Jun-2026</td><td data-orden="2026-06-30 00:00">30-Jun-2026</td><td>14</td><td>Open</td><td></td><td>Tolerable (20)</td><td>TAI- CURTAIN CLOSURE PROCEDURE</td></tr>
 <tr><td>O14328-26</td><td>TAI</td><td data-orden="2026-06-24 11:00">24-Jun-2026</td><td data-orden="2026-06-25 00:00">25-Jun-2026</td><td>19</td><td>Open</td><td></td><td>Acceptable (1)</td><td>TAI- UNAUTHORIZED LIFE VEST USE</td></tr>
 <tr><td>O14301-26</td><td>TAI</td><td data-orden="2026-06-23 12:00">23-Jun-2026</td><td data-orden="2026-06-25 00:00">25-Jun-2026</td><td>19</td><td>Open</td><td></td><td>Acceptable (4)</td><td>TAI- PAX INCIDENT IN DISEMBARKING</td></tr></tbody>
@@ -666,11 +643,11 @@
   </div>
   <div id="tab-frm" class="panel-tab">
           <div class="tarjetas">
-          <div class="tarjeta"><div class="valor">404</div><div class="etq">Ocurrencias FRM activas<br>(Year to Date)</div></div>
-          <div class="tarjeta"><div class="valor">361</div><div class="etq">OPEN</div></div>
+          <div class="tarjeta"><div class="valor">406</div><div class="etq">Ocurrencias FRM activas<br>(Year to Date)</div></div>
+          <div class="tarjeta"><div class="valor">363</div><div class="etq">OPEN</div></div>
           <div class="tarjeta"><div class="valor">43</div><div class="etq">In Progress</div></div>
           <div class="tarjeta"><div class="valor">387</div><div class="etq">Con riesgo asignado</div></div>
-          <div class="tarjeta rojo"><div class="valor">17</div><div class="etq">Sin riesgo asignado</div></div></div>
+          <div class="tarjeta rojo"><div class="valor">19</div><div class="etq">Sin riesgo asignado</div></div></div>
           <div class="graficos">
             <div class="grafico"><h3>Ocurrencias con riesgo vs sin riesgo</h3>
               <canvas id="gRiesgoFRM"></canvas></div>
@@ -682,7 +659,7 @@
       <summary>
         <span class="num">≡</span>
         <span class="titulo-sec">Listado completo de ocurrencias FRM con nivel de riesgo<small>Todas las ocurrencias FRM activas (Open + In Progress), Year to Date</small></span>
-        <span class="badge badge-alerta">404</span>
+        <span class="badge badge-alerta">406</span>
         <span class="flecha">▾</span>
       </summary>
       <div class="tabla-wrap">
@@ -1048,6 +1025,8 @@
 <tr><td>O127-26</td><td>GLG</td><td data-orden="2026-01-03 12:00">03-Jan-2026</td><td data-orden="2026-01-05 00:00">05-Jan-2026</td><td class="dias-alto">190</td><td>Open</td><td></td><td>Acceptable (4)</td><td>GLG - FLT FATIGUE CONTINOUS LATE NIGHT AND EARLY SIGN INS</td></tr>
 <tr><td>O12056-26</td><td>LRC</td><td data-orden="2026-05-26 12:00">26-May-2026</td><td data-orden="2026-05-27 00:00">27-May-2026</td><td class="dias-alto">48</td><td>Open</td><td></td><td>Acceptable (4)</td><td>LRC - CAB ASSINGMENT WITH 3 LEGS IN OPERATION AT SJO</td></tr>
 <tr><td>O15429-26</td><td>Otros</td><td data-orden="2026-07-06 22:48">06-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>Flaps overspeed during approach MDE</td></tr>
+<tr><td>O15486-26</td><td>Otros</td><td data-orden="2026-07-06 12:00">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>Evaluación de riesgo asociado a inicios tempranos consecutivos y gestión preventiva de fatiga operacional</td></tr>
+<tr><td>O15477-26</td><td>Otros</td><td data-orden="2026-07-06 06:00">06-Jul-2026</td><td data-orden="2026-07-14 00:00">14-Jul-2026</td><td>0</td><td>Open</td><td></td><td></td><td>Asignación extensa</td></tr>
 <tr><td>O15354-26</td><td>Otros</td><td data-orden="2026-07-05 20:30">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>Asignación .</td></tr>
 <tr><td>O15383-26</td><td>Otros</td><td data-orden="2026-07-05 11:00">05-Jul-2026</td><td data-orden="2026-07-09 00:00">09-Jul-2026</td><td>5</td><td>Open</td><td></td><td></td><td>Asignacion de 14 horas de servicio sin tiempo de descanso abordo</td></tr>
 <tr><td>O15013-26</td><td>Otros</td><td data-orden="2026-07-02 21:00">02-Jul-2026</td><td data-orden="2026-07-03 00:00">03-Jul-2026</td><td>11</td><td>Open</td><td></td><td></td><td>GA APROXIMACIÓN QUITO</td></tr>
@@ -1100,7 +1079,7 @@
 <footer>Reporte generado automáticamente · Safety / AQD Dashboard · avianca</footer>
 
 <script>
-const D = {"conteos": {"OPEN sin investigación": 51, "En Bitácora sin Task": 32, "Task sin investigación": 23, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 65, "OPEN con Task": 44}, "estados": {"OPEN": 72, "IN PROGRESS": 44}, "progreso": {"No iniciada": 88, "En curso": 4}, "por_mes": {"2026-02": 2, "2026-03": 3, "2026-04": 5, "2026-05": 3, "2026-06": 53, "2026-07": 50}, "cobertura": {"Con Task": 84, "Sin Task": 32}, "coa": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG"], "open": [27, 26, 5, 1, 2, 1, 9, 1], "prog": [14, 9, 3, 1, 1, 12, 4, 0], "con_inv": [29, 12, 3, 1, 3, 13, 4, 0], "sin_inv": [12, 23, 5, 1, 0, 0, 9, 1]}, "dias_prom": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG"], "valores": [14.0, 26.7, 14.4, 14.0, 14.3, 10.8, 28.8, 5.0]}, "riesgos": {"Intolerable": 1, "Tolerable": 28, "Acceptable": 59, "Sin riesgo asignado": 28}, "por_coa": {"Todos": {"conteos": {"OPEN sin investigación": 51, "En Bitácora sin Task": 32, "Task sin investigación": 23, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 65, "OPEN con Task": 44}, "cobertura": {"Con Task": 84, "Sin Task": 32}, "progreso": {"No iniciada": 88, "En curso": 4}, "riesgos": {"Intolerable": 1, "Tolerable": 28, "Acceptable": 59, "Sin riesgo asignado": 28}, "por_mes": {"2026-02": 2, "2026-03": 3, "2026-04": 5, "2026-05": 3, "2026-06": 53, "2026-07": 50}}, "AVA": {"conteos": {"OPEN sin investigación": 12, "En Bitácora sin Task": 13, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 9, "OPEN con Task": 15}, "cobertura": {"Con Task": 28, "Sin Task": 13}, "progreso": {"No iniciada": 25, "En curso": 3}, "riesgos": {"Tolerable": 12, "Acceptable": 17, "Sin riesgo asignado": 12}, "por_mes": {"2026-02": 1, "2026-04": 1, "2026-06": 18, "2026-07": 21}}, "GLG": {"conteos": {"OPEN sin investigación": 23, "En Bitácora sin Task": 4, "Task sin investigación": 21, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 31, "OPEN con Task": 24}, "cobertura": {"Con Task": 31, "Sin Task": 4}, "progreso": {"No iniciada": 30, "En curso": 1}, "riesgos": {"Intolerable": 1, "Tolerable": 7, "Acceptable": 25, "Sin riesgo asignado": 2}, "por_mes": {"2026-02": 1, "2026-03": 2, "2026-04": 1, "2026-05": 3, "2026-06": 22, "2026-07": 6}}, "TAI": {"conteos": {"OPEN sin investigación": 5, "En Bitácora sin Task": 4, "Task sin investigación": 1, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 4, "OPEN con Task": 1}, "cobertura": {"Con Task": 4, "Sin Task": 4}, "progreso": {"No iniciada": 4}, "riesgos": {"Tolerable": 2, "Acceptable": 2, "Sin riesgo asignado": 4}, "por_mes": {"2026-06": 4, "2026-07": 4}}, "LRC": {"conteos": {"OPEN sin investigación": 1, "En Bitácora sin Task": 0, "Task sin investigación": 1, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 2, "OPEN con Task": 1}, "cobertura": {"Con Task": 2, "Sin Task": 0}, "progreso": {"No iniciada": 2}, "riesgos": {"Tolerable": 1, "Acceptable": 1}, "por_mes": {"2026-06": 1, "2026-07": 1}}, "AVR": {"conteos": {"OPEN sin investigación": 0, "En Bitácora sin Task": 0, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 2}, "cobertura": {"Con Task": 3, "Sin Task": 0}, "progreso": {"No iniciada": 3}, "riesgos": {"Tolerable": 1, "Acceptable": 2}, "por_mes": {"2026-06": 2, "2026-07": 1}}, "TPA": {"conteos": {"OPEN sin investigación": 0, "En Bitácora sin Task": 1, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 8, "OPEN con Task": 1}, "cobertura": {"Con Task": 12, "Sin Task": 1}, "progreso": {"No iniciada": 12}, "riesgos": {"Tolerable": 1, "Acceptable": 11, "Sin riesgo asignado": 1}, "por_mes": {"2026-06": 6, "2026-07": 7}}, "TNO": {"conteos": {"OPEN sin investigación": 9, "En Bitácora sin Task": 9, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 4, "OPEN con Task": 0}, "cobertura": {"Con Task": 4, "Sin Task": 9}, "progreso": {"No iniciada": 4}, "riesgos": {"Tolerable": 4, "Acceptable": 1, "Sin riesgo asignado": 8}, "por_mes": {"2026-03": 1, "2026-04": 3, "2026-07": 9}}, "GUG": {"conteos": {"OPEN sin investigación": 1, "En Bitácora sin Task": 1, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 1}, "progreso": {}, "riesgos": {"Sin riesgo asignado": 1}, "por_mes": {"2026-07": 1}}}, "colores": {"rojo": "#D6001C", "rojo_oscuro": "#A50113", "negro": "#54565B", "azul_oscuro": "#1F4E79", "azul_claro": "#8DB4E2", "gris": "#797B80", "gris_claro": "#F4F4F4", "blanco": "#FFFFFF", "dorado": "#C8A96A"}};
+const D = {"conteos": {"OPEN sin investigación": 61, "En Bitácora sin Task": 42, "Task sin investigación": 23, "Task completa / sin cerrar Bitácora": 0, "Tasks vencidas": 65, "OPEN con Task": 44}, "estados": {"OPEN": 82, "IN PROGRESS": 44}, "progreso": {"No iniciada": 88, "En curso": 4}, "por_mes": {"2026-02": 2, "2026-03": 3, "2026-04": 5, "2026-05": 3, "2026-06": 53, "2026-07": 60}, "cobertura": {"Con Task": 84, "Sin Task": 42}, "coa": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG", "Otros"], "open": [32, 27, 5, 1, 2, 2, 11, 1, 1], "prog": [14, 9, 3, 1, 1, 12, 4, 0, 0], "con_task": [28, 31, 4, 2, 3, 12, 4, 0, 0], "sin_task": [18, 5, 4, 0, 0, 2, 11, 1, 1]}, "dias_prom": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG", "Otros"], "valores": [12.5, 26.0, 14.4, 14.0, 14.3, 10.0, 25.0, 5.0, 0.0]}, "riesgo_prom": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "TNO", "GUG", "Otros"], "valores": [17.2, 23.5, 12.5, 12.5, 9.7, 4.2, 30.2, null, null], "n": [29, 33, 4, 2, 3, 12, 5, 0, 0]}, "riesgos": {"Intolerable": 1, "Tolerable": 28, "Acceptable": 59, "Sin riesgo asignado": 38}, "por_coa": {"Todos": {"conteos": {"OPEN sin investigación": 61, "En Bitácora sin Task": 42, "Task sin investigación": 23, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 65, "OPEN con Task": 44}, "cobertura": {"Con Task": 84, "Sin Task": 42}, "progreso": {"No iniciada": 88, "En curso": 4}, "riesgos": {"Intolerable": 1, "Tolerable": 28, "Acceptable": 59, "Sin riesgo asignado": 38}, "por_mes": {"2026-02": 2, "2026-03": 3, "2026-04": 5, "2026-05": 3, "2026-06": 53, "2026-07": 60}}, "AVA": {"conteos": {"OPEN sin investigación": 17, "En Bitácora sin Task": 18, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 9, "OPEN con Task": 15}, "cobertura": {"Con Task": 28, "Sin Task": 18}, "progreso": {"No iniciada": 25, "En curso": 3}, "riesgos": {"Tolerable": 12, "Acceptable": 17, "Sin riesgo asignado": 17}, "por_mes": {"2026-02": 1, "2026-04": 1, "2026-06": 18, "2026-07": 26}}, "GLG": {"conteos": {"OPEN sin investigación": 24, "En Bitácora sin Task": 5, "Task sin investigación": 21, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 31, "OPEN con Task": 24}, "cobertura": {"Con Task": 31, "Sin Task": 5}, "progreso": {"No iniciada": 30, "En curso": 1}, "riesgos": {"Intolerable": 1, "Tolerable": 7, "Acceptable": 25, "Sin riesgo asignado": 3}, "por_mes": {"2026-02": 1, "2026-03": 2, "2026-04": 1, "2026-05": 3, "2026-06": 22, "2026-07": 7}}, "TAI": {"conteos": {"OPEN sin investigación": 5, "En Bitácora sin Task": 4, "Task sin investigación": 1, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 4, "OPEN con Task": 1}, "cobertura": {"Con Task": 4, "Sin Task": 4}, "progreso": {"No iniciada": 4}, "riesgos": {"Tolerable": 2, "Acceptable": 2, "Sin riesgo asignado": 4}, "por_mes": {"2026-06": 4, "2026-07": 4}}, "LRC": {"conteos": {"OPEN sin investigación": 1, "En Bitácora sin Task": 0, "Task sin investigación": 1, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 2, "OPEN con Task": 1}, "cobertura": {"Con Task": 2, "Sin Task": 0}, "progreso": {"No iniciada": 2}, "riesgos": {"Tolerable": 1, "Acceptable": 1}, "por_mes": {"2026-06": 1, "2026-07": 1}}, "AVR": {"conteos": {"OPEN sin investigación": 0, "En Bitácora sin Task": 0, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 2}, "cobertura": {"Con Task": 3, "Sin Task": 0}, "progreso": {"No iniciada": 3}, "riesgos": {"Tolerable": 1, "Acceptable": 2}, "por_mes": {"2026-06": 2, "2026-07": 1}}, "TPA": {"conteos": {"OPEN sin investigación": 1, "En Bitácora sin Task": 2, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 8, "OPEN con Task": 1}, "cobertura": {"Con Task": 12, "Sin Task": 2}, "progreso": {"No iniciada": 12}, "riesgos": {"Tolerable": 1, "Acceptable": 11, "Sin riesgo asignado": 2}, "por_mes": {"2026-06": 6, "2026-07": 8}}, "TNO": {"conteos": {"OPEN sin investigación": 11, "En Bitácora sin Task": 11, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 4, "OPEN con Task": 0}, "cobertura": {"Con Task": 4, "Sin Task": 11}, "progreso": {"No iniciada": 4}, "riesgos": {"Tolerable": 4, "Acceptable": 1, "Sin riesgo asignado": 10}, "por_mes": {"2026-03": 1, "2026-04": 3, "2026-07": 11}}, "GUG": {"conteos": {"OPEN sin investigación": 1, "En Bitácora sin Task": 1, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 1}, "progreso": {}, "riesgos": {"Sin riesgo asignado": 1}, "por_mes": {"2026-07": 1}}, "Otros": {"conteos": {"OPEN sin investigación": 1, "En Bitácora sin Task": 1, "Task sin investigación": 0, "Task completa / Bitácora OPEN": 0, "Tasks vencidas": 0, "OPEN con Task": 0}, "cobertura": {"Con Task": 0, "Sin Task": 1}, "progreso": {}, "riesgos": {"Sin riesgo asignado": 1}, "por_mes": {"2026-07": 1}}}, "colores": {"rojo": "#D6001C", "rojo_oscuro": "#A50113", "negro": "#54565B", "azul_oscuro": "#1F4E79", "azul_claro": "#8DB4E2", "gris": "#797B80", "gris_claro": "#F4F4F4", "blanco": "#FFFFFF", "dorado": "#C8A96A"}};
 const C = D.colores;
 const paleta = [C.rojo, C.negro, C.gris, C.azul_claro, C.rojo_oscuro, C.dorado];
 Chart.defaults.font.family = '"Segoe UI", Helvetica, Arial, sans-serif';
@@ -1140,8 +1119,8 @@ const chCoaInv = new Chart(document.getElementById("gCoaInv"), {
   type: "bar",
   data: { labels: D.coa.labels,
     datasets: [
-      { label: "Con investigación", data: D.coa.con_inv, backgroundColor: C.azul_claro, borderRadius: 4 },
-      { label: "Sin investigación", data: D.coa.sin_inv, backgroundColor: C.rojo, borderRadius: 4 }
+      { label: "Con Task", data: D.coa.con_task, backgroundColor: C.azul_claro, borderRadius: 4 },
+      { label: "Sin Task (solo en Bitácora)", data: D.coa.sin_task, backgroundColor: C.rojo, borderRadius: 4 }
     ] },
   options: { indexAxis: "y", maintainAspectRatio: false,
     plugins: { legend: { position: "bottom" } },
@@ -1171,14 +1150,18 @@ const chDias = new Chart(document.getElementById("gDias"), {
                      title: { display: true, text: "días" } } } }
 });
 
+// Riesgo promedio por COA (solo ocurrencias con riesgo asignado)
 const chBarras = new Chart(document.getElementById("gBarras"), {
   type: "bar",
-  data: { labels: Object.keys(D.conteos),
-    datasets: [{ data: Object.values(D.conteos),
-      backgroundColor: paleta,
+  data: { labels: D.riesgo_prom.labels,
+    datasets: [{ label: "Riesgo promedio", data: D.riesgo_prom.valores,
+      backgroundColor: C.dorado,
       borderRadius: 6 }] },
-  options: { plugins: { legend: { display: false }, datalabels: etiquetaArriba },
-    scales: { y: { beginAtZero: true, grace: "10%", ticks: { precision: 0 } } } }
+  options: { plugins: { legend: { display: false }, datalabels: etiquetaArriba,
+      tooltip: { callbacks: { footer: items =>
+        "sobre " + D.riesgo_prom.n[items[0].dataIndex] + " ocurrencia(s) con riesgo" } } },
+    scales: { y: { beginAtZero: true, grace: "10%",
+                     title: { display: true, text: "puntaje de riesgo" } } } }
 });
 
 const chCobertura = new Chart(document.getElementById("gCobertura"), {
@@ -1209,7 +1192,7 @@ const chMes = new Chart(document.getElementById("gMes"), {
 // ---------------------------------------------------------------------------
 // Pestaña CBN: gráficas y conmutador de pestañas
 // ---------------------------------------------------------------------------
-const DX = {"CBN": {"riesgo": {"Con riesgo": 27, "Sin riesgo asignado": 1}, "dias": {"labels": ["AVA", "GLG", "TAI", "LRC"], "valores": [28.0, 70.5, 17.3, 0.0]}}, "FRM": {"riesgo": {"Con riesgo": 387, "Sin riesgo asignado": 17}, "dias": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "Otros"], "valores": [87.6, 91.1, 92.1, 48.0, 126.0, 97.1, 18.5]}}};
+const DX = {"CBN": {"riesgo": {"Con riesgo": 26, "Sin riesgo asignado": 6}, "dias": {"labels": ["AVA", "GLG", "TAI", "Otros"], "valores": [22.8, 21.0, 17.3, 0.0]}}, "FRM": {"riesgo": {"Con riesgo": 387, "Sin riesgo asignado": 19}, "dias": {"labels": ["AVA", "GLG", "TAI", "LRC", "AVR", "TPA", "Otros"], "valores": [87.6, 91.1, 92.1, 48.0, 126.0, 97.1, 16.7]}}};
 Object.entries(DX || {}).forEach(([cod, d]) => {
   const cR = document.getElementById("gRiesgo" + cod);
   const cD = document.getElementById("gDias" + cod);
@@ -1247,7 +1230,6 @@ document.querySelectorAll(".tab-btn").forEach(b => b.addEventListener("click", (
 // ---------------------------------------------------------------------------
 function aplicarCoaGraficas(coa) {
   const d = D.por_coa[coa];
-  chBarras.data.datasets[0].data = Object.values(d.conteos);
   chCobertura.data.datasets[0].data = Object.values(d.cobertura);
   chProgreso.data.labels = Object.keys(d.progreso);
   chProgreso.data.datasets[0].data = Object.values(d.progreso);
@@ -1261,6 +1243,7 @@ function aplicarCoaGraficas(coa) {
   const atenuar = c => c + "38";
   const cols = base => D.coa.labels.map(l =>
       (coa === "Todos" || l === coa) ? base : atenuar(base));
+  chBarras.data.datasets[0].backgroundColor = cols(C.dorado);
   chCoa.data.datasets[0].backgroundColor = cols(C.rojo);
   chCoa.data.datasets[1].backgroundColor = cols(C.gris);
   chCoaInv.data.datasets[0].backgroundColor = cols(C.azul_claro);
