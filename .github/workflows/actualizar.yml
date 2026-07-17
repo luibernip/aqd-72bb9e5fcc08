@@ -40,7 +40,9 @@ jobs:
 
       - name: Extraer Planner (sesión virtual de Microsoft)
         env:
-          MS_SESION: ${{ secrets.MS_SESION }}
+          # la sesión puede venir partida en hasta 3 secretos (48 KB c/u);
+          # aquí se reúnen de nuevo
+          MS_SESION: ${{ secrets.MS_SESION }}${{ secrets.MS_SESION_2 }}${{ secrets.MS_SESION_3 }}
         run: python extraer_planner_cloud.py
 
       - name: Generar reporte HTML
