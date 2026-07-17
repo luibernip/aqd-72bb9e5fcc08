@@ -104,7 +104,11 @@ COLORES = {
     "dorado":      "#C8A96A",
 }
 
-HOY = date.today()
+# Todas las fechas/horas en hora de Colombia, sin importar dónde corra el
+# script (en GitHub Actions la máquina está en UTC)
+from zoneinfo import ZoneInfo
+TZ_BOGOTA = ZoneInfo("America/Bogota")
+HOY = datetime.now(TZ_BOGOTA).date()
 
 # ---------------------------------------------------------------------------
 # UTILIDADES
@@ -780,7 +784,7 @@ def generar_html(bit, pla, r, salida, extras=None):
 <header>
   <h1><span class="logo">avianca</span> · Bitácora AQD vs Planner Tasks</h1>
   <p>Bitácora: Occurrence type FLT · State: All Active · Year to date ·
-     COAs: {", ".join(COAS)} &nbsp;|&nbsp; Generado: {datetime.now().strftime("%d-%b-%Y %H:%M")}</p>
+     COAs: {", ".join(COAS)} &nbsp;|&nbsp; Generado: {datetime.now(TZ_BOGOTA).strftime("%d-%b-%Y %H:%M")} (hora Colombia)</p>
 </header>
 <main>
   {barra_tabs}

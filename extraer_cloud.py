@@ -24,7 +24,10 @@ URL = "https://bitacora.avianca.com/AQDPortal/safety.aspx"
 TIPOS = (("FLT", "bitacora_real.csv"),
          ("CBN", "bitacora_cbn_real.csv"),
          ("FRM", "bitacora_frm_real.csv"))
-HOY = date.today()
+# Fechas en hora de Colombia (el runner de GitHub está en UTC)
+from datetime import datetime
+from zoneinfo import ZoneInfo
+HOY = datetime.now(ZoneInfo("America/Bogota")).date()
 
 
 def log(msg):
