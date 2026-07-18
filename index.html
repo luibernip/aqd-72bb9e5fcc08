@@ -128,7 +128,7 @@
 <header>
   <h1><span class="logo">avianca</span> · Bitácora AQD vs Planner Tasks</h1>
   <p>Bitácora: Occurrence type FLT · State: All Active · Year to date ·
-     COAs: AVA, GLG, TAI, LRC, AVR, TPA, TNO, GUG &nbsp;|&nbsp; Generado: 18-Jul-2026 07:55 (hora Colombia)</p>
+     COAs: AVA, GLG, TAI, LRC, AVR, TPA, TNO, GUG &nbsp;|&nbsp; Generado: 18-Jul-2026 09:18 (hora Colombia)</p>
 </header>
 <main>
   
@@ -949,10 +949,10 @@
   <div id="tab-frm" class="panel-tab">
           <div class="tarjetas">
           <div class="tarjeta"><div class="valor">421</div><div class="etq">Ocurrencias FRM activas<br>(Year to Date)</div></div>
-          <div class="tarjeta"><div class="valor">374</div><div class="etq">OPEN</div></div>
-          <div class="tarjeta"><div class="valor">47</div><div class="etq">In Progress</div></div>
-          <div class="tarjeta"><div class="valor">404</div><div class="etq">Con riesgo asignado</div></div>
-          <div class="tarjeta rojo"><div class="valor">17</div><div class="etq">Sin riesgo asignado</div></div></div>
+          <div class="tarjeta"><div class="valor">373</div><div class="etq">OPEN</div></div>
+          <div class="tarjeta"><div class="valor">48</div><div class="etq">In Progress</div></div>
+          <div class="tarjeta"><div class="valor">405</div><div class="etq">Con riesgo asignado</div></div>
+          <div class="tarjeta rojo"><div class="valor">16</div><div class="etq">Sin riesgo asignado</div></div></div>
           <div class="graficos">
             <div class="grafico"><h3>Ocurrencias con riesgo vs sin riesgo</h3>
               <canvas id="gRiesgoFRM"></canvas></div>
@@ -971,7 +971,7 @@
         <table>
           <thead><tr><th>Evento</th><th>COA</th><th>Fecha</th><th>Registrada</th><th>Días abierta</th><th>Estado</th><th>Investigación</th><th>Riesgo</th><th>Descripción</th></tr></thead>
           <tbody><tr><td>O16003-26</td><td>AVA</td><td data-orden="2026-07-13 14:38">13-Jul-2026</td><td data-orden="2026-07-17 00:00">17-Jul-2026</td><td>1</td><td>Open</td><td></td><td></td><td>AVA- MULTIPLE AIRCRAFT AND CREW CHANGES CAUSING OPERATIONAL DELAYS</td></tr>
-<tr><td>O15828-26</td><td>AVA</td><td data-orden="2026-07-12 05:10">12-Jul-2026</td><td data-orden="2026-07-16 00:00">16-Jul-2026</td><td>2</td><td>Open</td><td></td><td></td><td>AVA- DUTY TIME EXTENSION</td></tr>
+<tr><td>O15828-26</td><td>AVA</td><td data-orden="2026-07-12 05:10">12-Jul-2026</td><td data-orden="2026-07-16 00:00">16-Jul-2026</td><td>2</td><td>In Progress</td><td>Assessment Only</td><td>Tolerable (20)</td><td>AVA- FLT LDP DOMCOL PEI &#43, MEX AV044 WOCL</td></tr>
 <tr><td>O15839-26</td><td>AVA</td><td data-orden="2026-07-11 23:20">11-Jul-2026</td><td data-orden="2026-07-16 00:00">16-Jul-2026</td><td>2</td><td>Open</td><td></td><td></td><td>AVA CREW FATIGUE DURING MULTI SECTOR OPERATIONS</td></tr>
 <tr><td>O15835-26</td><td>AVA</td><td data-orden="2026-07-11 22:00">11-Jul-2026</td><td data-orden="2026-07-16 00:00">16-Jul-2026</td><td>2</td><td>Open</td><td></td><td></td><td>AVA- CAPTAIN UNAUTHORIZED INFLIGHT REST WITHOUT CREW NOTIFICATION</td></tr>
 <tr><td>O15781-26</td><td>AVA</td><td data-orden="2026-07-11 00:01">11-Jul-2026</td><td data-orden="2026-07-16 00:00">16-Jul-2026</td><td>2</td><td>Open</td><td></td><td>Acceptable (10)</td><td>AVA - CAB LATE NIGHT /RED EYE ASSINGMENT VVI</td></tr>
@@ -1525,7 +1525,7 @@ const chMes = new Chart(document.getElementById("gMes"), {
 // ---------------------------------------------------------------------------
 // Pestaña CBN: gráficas y conmutador de pestañas
 // ---------------------------------------------------------------------------
-const DX = {"CBN": {"riesgo": {"Con riesgo": 18, "Sin riesgo asignado": 25}, "dias": {"labels": ["AVA", "TAI", "AVR", "Otros"], "valores": [7.7, 9.5, 1.0, 1.0]}}, "FRM": {"riesgo": {"Con riesgo": 404, "Sin riesgo asignado": 17}, "dias": {"labels": ["AVA", "GLG", "TAI", "AVR", "TPA", "Otros"], "valores": [87.4, 89.1, 96.1, 130.0, 92.8, 19.6]}}};
+const DX = {"CBN": {"riesgo": {"Con riesgo": 18, "Sin riesgo asignado": 25}, "dias": {"labels": ["AVA", "TAI", "AVR", "Otros"], "valores": [7.7, 9.5, 1.0, 1.0]}}, "FRM": {"riesgo": {"Con riesgo": 405, "Sin riesgo asignado": 16}, "dias": {"labels": ["AVA", "GLG", "TAI", "AVR", "TPA", "Otros"], "valores": [87.4, 89.1, 96.1, 130.0, 92.8, 19.6]}}};
 Object.entries(DX || {}).forEach(([cod, d]) => {
   const cR = document.getElementById("gRiesgo" + cod);
   const cD = document.getElementById("gDias" + cod);
