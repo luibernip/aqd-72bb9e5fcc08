@@ -33,6 +33,9 @@ def salir_suave(motivo):
     log(f"AVISO: {motivo}")
     log("Se conserva la última foto de Planner (planner_raw.txt del repo). "
         "Para renovarla: correr 'Actualizar Reporte.command' en el Mac.")
+    # marca para que el workflow avise (crea un issue en GitHub) que la
+    # sesión de Planner necesita renovarse
+    (CARPETA / "_planner_expirado.flag").write_text(motivo, encoding="utf-8")
     sys.exit(0)
 
 
@@ -105,6 +108,10 @@ def main():
     if not tareas:
         salir_suave("no se pudieron leer las tareas del plan.")
     (CARPETA / "planner_raw.txt").write_text(" ".join(tareas), encoding="utf-8")
+    # sesión válida: quitar la marca de expiración si existía
+    flag = CARPETA / "_planner_expirado.flag"
+    if flag.exists():
+        flag.unlink()
     log(f"Planner actualizado desde la nube: {len(tareas)} tareas con ID.")
 
 
