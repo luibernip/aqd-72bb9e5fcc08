@@ -50,14 +50,21 @@ JS = r"""
             const sig = k + ':' + v.length;
             if (!seen.has(sig)) {
               seen.add(sig);
-              const s = JSON.stringify(v[0]);
-              const hasTask = v.some(it => it &&
-                /O\d{1,5}-\d{2}/.test(JSON.stringify(
-                  (it.displayName||it.title||it.name||it.text||''))));
+              const asStr = x => (typeof x === 'string') ? x : '';
+              // campos string cortos del primer item (muestra segura)
+              const sample = {};
+              for (const [kk, vv] of Object.entries(v[0])) {
+                if (typeof vv === 'string' && vv.length <= 60) sample[kk] = vv;
+                else if (typeof vv === 'number' || typeof vv === 'boolean')
+                  sample[kk] = vv;
+              }
+              const hasTask = v.some(it => it && /O\d{1,5}-\d{2}/.test(
+                asStr(it.displayName) + asStr(it.title) +
+                asStr(it.name) + asStr(it.text) + asStr(it.label)));
               const rec = {prop: k, len: v.length,
-                           keys: Object.keys(v[0]).slice(0, 18)};
+                           keys: Object.keys(v[0]).slice(0, 20), sample};
               if (hasTask) conTarea.push(rec);
-              else if (otros.length < 15) otros.push(rec);
+              else if (otros.length < 12) otros.push(rec);
             }
           }
         }
