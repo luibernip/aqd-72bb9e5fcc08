@@ -122,6 +122,23 @@ def main():
             except Exception:
                 res = None
             time.sleep(3)
+
+        # Planner carga las tareas por lotes: esperar a que el conteo total se
+        # estabilice (dejar de crecer) para no leer un subconjunto parcial.
+        if res and res.get("ok"):
+            prev, estable = -1, 0
+            for _ in range(20):
+                res = page.evaluate(js_leer)
+                n = res["total"] if res and res.get("ok") else 0
+                if n > 0 and n == prev:
+                    estable += 1
+                    if estable >= 2:
+                        break
+                else:
+                    estable = 0
+                prev = n
+                time.sleep(3)
+
         navegador.close()
         ruta_estado.unlink(missing_ok=True)
 
