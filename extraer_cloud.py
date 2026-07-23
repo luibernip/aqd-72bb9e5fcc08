@@ -154,8 +154,8 @@ def main():
             }}""")
 
             datos = []
-            for _ in range(4):
-                time.sleep(8)
+            for intento in range(8):
+                time.sleep(8 if intento == 0 else 6)
                 todas = page.evaluate("""async () => {
                     const ctl = new AbortController();
                     setTimeout(() => ctl.abort(), 120000);
@@ -185,8 +185,21 @@ def main():
                     break
                 log(f"  criterios aún no aplicados ({len(datos)}/{len(todas)}); "
                     "reintentando…")
+                # el servidor puede no haber registrado la búsqueda: reintentarla
+                if intento in (2, 4):
+                    try:
+                        page.evaluate("() => occurrencesSearchClicked()")
+                    except Exception:
+                        pass
             if not datos:
-                sys.exit(f"ERROR: {codigo} no devolvió resultados.")
+                # FLT es el tipo principal: si falla, no hay reporte que valga.
+                # CBN/FRM son secundarios: se conserva su último dato y se
+                # continúa, para no tumbar toda la actualización por un tipo.
+                if codigo == "FLT":
+                    sys.exit("ERROR: FLT (tipo principal) no devolvió resultados.")
+                log(f"  AVISO: {codigo} no devolvió resultados; se conserva "
+                    "el dato anterior de esa pestaña y se continúa.")
+                continue
             guardar_csv(datos, CARPETA / archivo)
             abiertas = sum(1 for d in datos if d["estado"] == "Open")
             log(f"  {codigo}: {len(datos)} ocurrencias "
