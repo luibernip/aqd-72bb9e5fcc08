@@ -24,6 +24,47 @@ URL_PLANNER = ("https://planner.cloud.microsoft/webui/plan/"
                "yC2AO9h21ku3dDlygaHj6WQAAHdx/view/grid"
                "?tid=a2addd3e-8397-4579-ba30-7a38803fc3bf")
 
+# Lee las tareas del plan desde el estado de React. Microsoft (jul-2026)
+# renombró el arreglo de tareas a 'allTasks'/'rows' (antes 'rowData') y el
+# campo de completado a 'finishDateTime' (antes 'completedDateTime').
+# Devuelve {ok, tareas, total} si encontró el arreglo, o null si no.
+JS_LEER_PLANNER = r"""
+() => {
+  let arr = null;
+  for (const el of document.querySelectorAll(
+         '[role="row"],[role="grid"],[role="treegrid"],div')) {
+    const key = Object.keys(el).find(k => k.startsWith('__reactFiber$'));
+    if (!key) continue;
+    let fib = el[key], hops = 0;
+    while (fib && hops < 40) {
+      const p = fib.memoizedProps;
+      if (p && (Array.isArray(p.allTasks) || Array.isArray(p.rows))) {
+        const a = Array.isArray(p.allTasks) ? p.allTasks : p.rows;
+        if (a.length && a[0] && typeof a[0].displayName === 'string') {
+          arr = a; break;
+        }
+      }
+      fib = fib.return; hops++;
+    }
+    if (arr) break;
+  }
+  if (!arr) return null;
+  const f = d => {
+    if (!d) return '';
+    const m = JSON.stringify(d).match(/\d{4}-\d{2}-\d{2}/);
+    return m ? m[0].slice(2) : '';
+  };
+  const tareas = arr
+    .filter(t => t && /O\d{1,5}-\d{2}/.test(t.displayName || ''))
+    .map(t => t.displayName.match(/O\d{1,5}-\d{2}/)[0] + '~' +
+         f(t.dueDateTime) + '~' +
+         (t.percentComplete === 100 ? 'C' :
+          t.percentComplete > 0 ? 'E' : 'N') +
+         '~' + f(t.finishDateTime));
+  return { ok: true, tareas, total: arr.length };
+}
+"""
+
 
 def log(msg):
     print(f"[{time.strftime('%H:%M:%S')}] {msg}", flush=True)
@@ -59,60 +100,46 @@ def main():
         log("Abriendo Planner con la sesión virtual…")
         page.goto(URL_PLANNER, wait_until="domcontentloaded", timeout=120_000)
 
+        # Detección + extracción robustas. El arreglo de tareas vive ahora en
+        # los props de React 'allTasks'/'rows' (antes 'rowData'); las tareas
+        # completadas usan 'finishDateTime' (antes 'completedDateTime'). El
+        # JS devuelve {ok, tareas, total} si halló el arreglo, o null si no.
+        js_leer = JS_LEER_PLANNER
         fin = time.time() + 150
-        listo = False
+        res = None
         while time.time() < fin:
             try:
-                if page.evaluate("() => document.querySelectorAll("
-                                 "'[role=\"row\"].grid-row').length > 0"):
-                    listo = True
+                res = page.evaluate(js_leer)
+                if res and res.get("ok"):
                     break
+                res = None
                 if page.locator("input[type=password], #i0116").count():
                     break                     # redirigió al login: sesión muerta
             except Exception:
-                pass
+                res = None
             time.sleep(3)
-        if not listo:
-            navegador.close()
-            ruta_estado.unlink(missing_ok=True)
-            salir_suave("la sesión de Microsoft expiró o fue rechazada "
-                        "(no cargó la grilla de Planner).")
-
-        time.sleep(3)
-        tareas = page.evaluate("""() => {
-            const row = document.querySelector('[role="row"].grid-row');
-            const key = Object.keys(row).find(k => k.startsWith('__reactFiber$'));
-            let fib = row[key];
-            while (fib) {
-                const p = fib.memoizedProps;
-                if (p && Array.isArray(p.rowData)) break;
-                fib = fib.return;
-            }
-            if (!fib) return null;
-            const f = d => {
-                if (!d) return '';
-                const m = JSON.stringify(d).match(/\\d{4}-\\d{2}-\\d{2}/);
-                return m ? m[0].slice(2) : '';
-            };
-            return fib.memoizedProps.rowData
-                .filter(t => /O\\d{1,5}-\\d{2}/.test(t.displayName || ''))
-                .map(t => t.displayName.match(/O\\d{1,5}-\\d{2}/)[0] + '~' +
-                     f(t.dueDateTime) + '~' +
-                     (t.percentComplete === 100 ? 'C' :
-                      t.percentComplete > 0 ? 'E' : 'N') +
-                     '~' + f(t.completedDateTime));
-        }""")
         navegador.close()
         ruta_estado.unlink(missing_ok=True)
 
-    if not tareas:
-        salir_suave("no se pudieron leer las tareas del plan.")
-    (CARPETA / "planner_raw.txt").write_text(" ".join(tareas), encoding="utf-8")
-    # sesión válida: quitar la marca de expiración si existía
+    if not res or not res.get("ok"):
+        salir_suave("la sesión de Microsoft expiró o fue rechazada "
+                    "(no se pudieron leer las tareas de Planner).")
+    tareas = res["tareas"]
+    log(f"Planner leído: {res['total']} tareas en el plan, "
+        f"{len(tareas)} con ID de ocurrencia O####-##.")
+    # sesión válida: quitar la marca de expiración si existía (no es expiración)
     flag = CARPETA / "_planner_expirado.flag"
     if flag.exists():
         flag.unlink()
-    log(f"Planner actualizado desde la nube: {len(tareas)} tareas con ID.")
+    if tareas:
+        (CARPETA / "planner_raw.txt").write_text(" ".join(tareas),
+                                                 encoding="utf-8")
+        log(f"Planner actualizado desde la nube: {len(tareas)} tareas con ID.")
+    else:
+        log(f"AVISO: el plan tiene {res['total']} tareas pero NINGUNA usa el "
+            "formato O####-##. Se conserva la última foto. Probablemente las "
+            "tareas ahora usan otro identificador (p.ej. YY/AI/####); hay que "
+            "revisar la llave de cruce con Bitácora.")
 
 
 if __name__ == "__main__":
